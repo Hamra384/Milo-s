@@ -199,3 +199,7 @@
     background-color: #f2f2f2;
 }
 
+.Bienvenidos {
+    position: relative; /* Establece la posición como relativa */
+  top: -60px; /* Mueve la imagen 20px hacia arriba */
+}

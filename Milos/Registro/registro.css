@@ -5,5 +5,6 @@
 
 .Rectangulorosa {
     margin-left:150px;
-    
+    position: relative; /* Establece la posición como relativa */
+  top: 120px; /* Mueve la imagen 20px hacia arriba */
 }
