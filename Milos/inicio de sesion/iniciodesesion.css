@@ -1,5 +1,12 @@
-.medio-circulo-celeste {
-    margin-top: 1000px; /* Ajusta este valor para mover más abajo */
-   margin-right: 1300px; /* Ajusta este valor para mover más a la derecha */
- 
-}
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .center-text {
+    text-align: center;
+  }
+  

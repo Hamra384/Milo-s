@@ -1,7 +1,8 @@
 /* Estilos para el contenedor de la imagen del rectángulo */
-.rectangle-container {
+.Rectangulorosa {
     text-align: center;
     padding: 100px 0; /* Ajusta el espaciado según sea necesario */
+    width: 100%;
 }
 
 
@@ -23,7 +24,7 @@
 
 .dropbtn {
     background-color: #4CAF50;
-    color: rgb(0, 0, 0);
+    color: rgb(132, 59, 59);
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -202,4 +203,53 @@
 .Bienvenidos {
     position: relative; /* Establece la posición como relativa */
   top: -60px; /* Mueve la imagen 20px hacia arriba */
+}
+
+/* Estilos para el menú desplegable */
+.menu {
+    position: relative;
+    background-color: white; /* Cambiar el color de fondo a blanco */
+    color: black; /* Cambiar el color del texto a negro */
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px;
+    color: black; /* Cambiar el color del icono a negro */
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: black; /* Cambiar el color de las barras a negro */
+    margin: 3px 0;
+}
+
+.submenu {
+    display: none;
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: white; /* Cambiar el color de fondo del submenú a blanco */
+    margin-top: 40px;
+    left: 0;
+    width: 150px;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.submenu a {
+    color: black; /* Cambiar el color del texto del submenú a negro */
+    text-decoration: none;
 }
