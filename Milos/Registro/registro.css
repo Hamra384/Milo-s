@@ -54,7 +54,7 @@ label {
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-  width: 100%;
+  width: 65%;
   padding: 10px;
   padding-left: 35px;
   border: 1px solid #ccc;
@@ -62,7 +62,7 @@ input[type="password"] {
 }
 
 .input-with-icon input[type="password"] {
-  padding-right: 35px;
+  padding-right: 0px;
 }
 
 .button-container {
