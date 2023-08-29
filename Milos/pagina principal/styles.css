@@ -17,7 +17,7 @@
 
 .mediocirculomilos {
     margin-left: 960px; 
-    margin-top: 57px;
+    margin-top: 100px;
 }
 
 /* Estilos para el contenedor de la imagen del rectángulo */
@@ -26,6 +26,10 @@
     padding: 100px 0; /* Ajusta el espaciado según sea necesario */
     width: 95%;
     margin-top: -50px;
+}
+
+.Bienvenidos{
+    top: -200px;
 }
 
 
