@@ -28,3 +28,37 @@ async function SelId(nombre){
         console.log(respuesta);
     } 
 }
+async function QueryIn(string, values) {
+    try {
+        const [results] = await connection.execute(string, values);
+        return results;
+    } catch (error) {
+        throw error;
+    }
+}
+ 
+async function InsertarUsuario(nombre, contraseña, email) {
+    const consulta = "INSERT INTO datos_user (Nombre_Usuario, Contraseña, Email) VALUES (?, ?, ?)";
+    const values = [nombre, contraseña, email];
+    try {
+        const respuesta = await QueryIn(consulta, values);
+        console.log("Usuario insertado correctamente:", respuesta);
+    } catch (error) {
+        console.error("Error al insertar usuario:", error);
+    }
+}
+async function InsertarHijo(nombreHijo, generoHijo, edadHijo) {
+    const consulta = "INSERT INTO datos_hijos (Nombre_Hijo, Genero_Hijo, Edad_Hijo) VALUES (?, ?, ?)";
+    const values = [nombreHijo, generoHijo, edadHijo, idUsuario];
+
+    try {
+        const respuesta = await QueryIn(consulta, values);
+        console.log("Hijo insertado correctamente:", respuesta);
+    } catch (error) {
+        console.error("Error al insertar hijo:", error);
+    }
+}
+app.get('api/InsertarUsuario',async (req, res) => {
+    const {Nombre_Usuario, Contraseña, Email}= req.body;
+    
+}
