@@ -43,41 +43,6 @@
    
 }
 
-/* Estilos para el menú desplegable */
-.dropdown {
-    position: absolute;
-    top: -150px; /* Ajusta esta propiedad según tu diseño */
-    left: 20px; /* Ajusta esta propiedad según tu diseño */
-}
-
-.dropbtn {
-    background-color: #4CAF50;
-    color: rgb(132, 59, 59);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #af9595;
-    min-width: 160px;
-    z-index: 1;
-    top: 100%;
-}
-
-.dropdown-content li {
-    padding: 10px;
-    display: block; 
-    width: 100%;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-
 /* Estilo para el fondo celeste y centrar el contenido verticalmente */
 .container {
     width: 100%;

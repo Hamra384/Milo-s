@@ -1,0 +1,30 @@
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+td {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+td {
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 0;
+}
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    top: 40px;
+}
