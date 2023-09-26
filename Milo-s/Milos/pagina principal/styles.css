@@ -1,16 +1,16 @@
 
-/* Estilo para el botón de Registrarse */
+
 .start-button {
     position: absolute;
     top: 300px; /* Ajusta este valor según lo necesites para posicionar la imagen */
     left: 50%; /* Para centrar horizontalmente el botón */
-    transform: translateX(-50%); /* Centra horizontalmente el botón en relación con su contenedor */
+    transform: translateX(-50%); 
 }
 
-/* Estilo para el botón de Iniciar Sesión */
+
 .about-button {
     position: absolute;
-    top: 220px; /* Cambia este valor para posicionarlo debajo del botón de Registrarse */
+    top: 220px; 
     left: 50%;
     transform: translateX(-50%);
 }
@@ -21,10 +21,10 @@
     margin-top: 100px;
 }
 
-/* Estilos para el contenedor de la imagen del rectángulo */
+
 .Rectangulorosa {
     text-align: center;
-    padding: 100px 0; /* Ajusta el espaciado según sea necesario */
+    padding: 100px 0; 
     width: 95%;
     margin-top: -50px;
 }
@@ -34,21 +34,13 @@
 }
 
 
-/* Estilo para el medio círculo en la parte inferior derecha */
-.bottom-right-image {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    transform: translate(-50%, 50%);
-    margin-top: -1000px;
-   
-}
 
-/* Estilos para el menú desplegable */
+
+
 .dropdown {
     position: absolute;
-    top: -150px; /* Ajusta esta propiedad según tu diseño */
-    left: 20px; /* Ajusta esta propiedad según tu diseño */
+    top: -150px;
+    left: 20px; 
 }
 
 .dropbtn {
@@ -83,73 +75,12 @@
 }
 
 
-/* Estilo para el fondo celeste y centrar el contenido verticalmente */
-.container {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff; 
-/* Fondo celeste */
-}
-
-/* Estilos para el cartel de bienvenida */
-.welcome-container {
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    color: white;
-    padding: 50px 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-
-}
-
-/* Estilos para los botones "Empezar" y "De qué se trata" */
-.welcome-container {
-    text-align: center;
-    background-color: rgb(255, 255, 255);
-    color: white;
-    padding: 50px 0;
-}
-
-.welcome-heading {
-    margin: 0;
-    padding-bottom: 20px;
-}
-
-.start-button,
-.about-button {
-    display: inline-block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    border-radius: 5px;
-}
 
 .start-button:hover,
 .about-button:hover {
     background-color: #eee;
 }
 
-/* Estilos para los botones "Iniciar Sesión" y "Registrarse" en la segunda página */
-.login-button, .register-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #000000;
-    color: #00aaff;
-    text-decoration: none;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 1);
-
-}
 
 .login-button:hover, .register-button:hover {
     background-color: #000000;
