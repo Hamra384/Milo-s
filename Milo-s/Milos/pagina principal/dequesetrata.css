@@ -17,7 +17,7 @@
 
 .mediocirculomilos {
     margin-left: 30px; 
-    margin-top: 120px;
+    margin-top: -120px;
 }
 
 /* Estilos para el contenedor de la imagen del rectángulo */
@@ -25,13 +25,19 @@
     text-align: center;
     padding: 100px 0; /* Ajusta el espaciado según sea necesario */
     width: 95%;
-    margin-top: -100px;
+    margin-top: -70px;
 }
 
-.Bienvenidos{
-    top: -200px;
+.logomilos{
+    width: 10%;
+    margin-left: 70px;
+    margin-top: -20px;
 }
 
+.dequetrata{
+    width: 30%;
+    margin-left: 700px;
+}
 
 /* Estilo para el medio círculo en la parte inferior derecha */
 .bottom-right-image {
