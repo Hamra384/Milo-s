@@ -28,3 +28,5 @@ async function SelId(nombre){
         console.log(respuesta);
     } 
 }
+
+module.export = {SelId};
