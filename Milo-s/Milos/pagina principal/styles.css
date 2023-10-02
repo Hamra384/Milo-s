@@ -1,14 +1,14 @@
 
 
-.start-button {
+.registrarse {
     position: absolute;
-    top: 300px; /* Ajusta este valor según lo necesites para posicionar la imagen */
-    left: 50%; /* Para centrar horizontalmente el botón */
+    top: 300px; 
+    left: 50%; 
     transform: translateX(-50%); 
 }
 
 
-.about-button {
+.iniciarsesion {
     position: absolute;
     top: 220px; 
     left: 50%;
@@ -28,14 +28,6 @@
     width: 95%;
     margin-top: -50px;
 }
-
-.Bienvenidos{
-    top: -200px;
-}
-
-
-
-
 
 .dropdown {
     position: absolute;
@@ -71,82 +63,10 @@
 }
 
 .logomilos{
-    margin-top: -600px;
+   margin-top: -90px;
+    width: 10%;
 }
 
-
-
-.start-button:hover,
-.about-button:hover {
-    background-color: #eee;
-}
-
-
-.login-button:hover, .register-button:hover {
-    background-color: #000000;
-}
-
-/* Estilos para el formulario de registro */
-.registration-container {
-    background-color: #000000;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.registration-container h2 {
-    margin-bottom: 20px;
-}
-
-.registration-container form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.registration-container form input[type="text"],
-.registration-container form input[type="email"],
-.registration-container form input[type="password"],
-.registration-container form input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: none;
-    border-radius: 5px;
-}
-
-.registration-container form .hijos-container {
-    margin-top: 20px;
-}
-
-.registration-container form .hijo {
-    display: flex;
-    margin-bottom: 10px;
-}
-
-.registration-container form .hijo input[type="text"],
-.registration-container form .hijo input[type="number"] {
-    flex: 1;
-    padding: 5px;
-    margin-right: 10px;
-}
-
-.registration-container form .submit-button {
-    padding: 10px 20px;
-    background-color: white;
-    color: #00aaff;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.registration-container form .submit-button:hover {
-    background-color: #f2f2f2;
-}
 
 .back-button {
     position: absolute;
@@ -160,20 +80,12 @@
     font-weight: bold;
 }
 
-.back-button:hover {
-    background-color: #f2f2f2;
-}
 
-.Bienvenidos {
-    position: relative; /* Establece la posición como relativa */
-  top: -60px; /* Mueve la imagen 20px hacia arriba */
-}
 
-/* Estilos para el menú desplegable */
 .menu {
     position: relative;
-    background-color: white; /* Cambiar el color de fondo a blanco */
-    color: black; /* Cambiar el color del texto a negro */
+    background-color: white; 
+    color: black;
     display: flex;
     align-items: center;
     padding: 10px;
@@ -184,13 +96,13 @@
     flex-direction: column;
     cursor: pointer;
     margin-right: 10px;
-    color: black; /* Cambiar el color del icono a negro */
+    color: black; 
 }
 
 .bar {
     width: 30px;
     height: 3px;
-    background-color: black; /* Cambiar el color de las barras a negro */
+    background-color: black;
     margin: 3px 0;
 }
 
@@ -200,7 +112,6 @@
     padding: 0;
     position: absolute;
     background-color: rgba(140, 133, 135, 0.7);
-    ; /* Cambiar el color de fondo del submenú a blanco */
     margin-top: 250px;
     left: 0;
     width: 150px;
@@ -215,7 +126,7 @@
 }
 
 .submenu a {
-    color: black; /* Cambiar el color del texto del submenú a negro */
+    color: black; 
     text-decoration: none;
 }
 
