@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.use(express.json());
 
-const funcs = require(".\sql.js");
+const funcs = require("./sql.js");
 
 app.get("/represalia", function (req, res){
     let cuerpo = req.body;
@@ -28,3 +28,5 @@ app.get('api/InsertarUsuario',async (req, res) => {
 app.listen("http://localhost:9000");
 
 // Comando a poner en la consola de powershell: npm init --y
+//npm i express/ mysql2.
+//para correr la api: npm run dev
