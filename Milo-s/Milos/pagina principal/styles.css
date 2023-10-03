@@ -28,7 +28,7 @@
 }
 
 .dropdown {
-    
+    position: absolute;
     top: -150px;
     left: 20px; 
 }
@@ -81,6 +81,7 @@
 
 .bienvenidos{
   margin-top: -100px;
+  margin-left: 350px;
 }
 
 .menu {
@@ -136,4 +137,12 @@
     margin-top: -100px;
 }
  
-  
+.registrarse{
+    margin-left: -200px;
+    margin-top: 40px;
+}
+
+.iniciarsesion{
+    margin-left: -200px;
+    margin-top: 40px;
+}
