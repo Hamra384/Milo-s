@@ -42,61 +42,68 @@
  <body>
      <h1></h1>
      <div class="board" id="board">
-         <div class="cell" onclick="makeMove(0)"></div>
-         <div class="cell" onclick="makeMove(1)"></div>
-         <div class="cell" onclick="makeMove(2)"></div>
-         <div class="cell" onclick="makeMove(3)"></div>
-         <div class="cell" onclick="makeMove(4)"></div>
-         <div class="cell" onclick="makeMove(5)"></div>
-         <div class="cell" onclick="makeMove(6)"></div>
-         <div class="cell" onclick="makeMove(7)"></div>
-         <div class="cell" onclick="makeMove(8)"></div>
-     </div>
-     <p id="message"></p>
- 
-     <script>
-         const board = document.getElementById('board');
-         const cells = document.querySelectorAll('.cell');
-         const message = document.getElementById('message');
-         let currentPlayer = 'X';
-         let boardState = ['', '', '', '', '', '', '', '', ''];
-         let gameActive = true;
- 
-         function makeMove(cellIndex) {
-             if (boardState[cellIndex] === '' && gameActive) {
-                 boardState[cellIndex] = currentPlayer;
-                 cells[cellIndex].textContent = currentPlayer;
-                 cells[cellIndex].classList.add(currentPlayer === 'X' ? 'cross' : 'circle');
-                 
-                 if (checkWin()) {
-                     message.textContent = `¡Jugador ${currentPlayer} gana!`;
-                     gameActive = false;
-                 } else if (boardState.indexOf('') === -1) {
-                     message.textContent = '¡Empate!';
-                     gameActive = false;
-                 } else {
-                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                     message.textContent = `Turno del jugador ${currentPlayer}`;
-                 }
-             }
-         }
- 
-         function checkWin() {
-             const winPatterns = [
-                 [0, 1, 2], [3, 4, 5], [6, 7, 8],
-                 [0, 3, 6], [1, 4, 7], [2, 5, 8],
-                 [0, 4, 8], [2, 4, 6]
-             ];
- 
-             for (const pattern of winPatterns) {
-                 const [a, b, c] = pattern;
-                 if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
-                     return true;
-                 }
-             }
- 
-             return false;
-         }
-     </script>
- </body>
- </html>
+        <div class="cell" onclick="makeMove(0)"></div>
+        <div class="cell" onclick="makeMove(1)"></div>
+        <div class="cell" onclick="makeMove(2)"></div>
+        <div class="cell" onclick="makeMove(3)"></div>
+        <div class="cell" onclick="makeMove(4)"></div>
+        <div class="cell" onclick="makeMove(5)"></div>
+        <div class="cell" onclick="makeMove(6)"></div>
+        <div class="cell" onclick="makeMove(7)"></div>
+        <div class="cell" onclick="makeMove(8)"></div>
+    </div>
+    <p id="message"></p>
+
+    <script>
+        const board = document.getElementById('board');
+        const cells = document.querySelectorAll('.cell');
+        const message = document.getElementById('message');
+        let currentPlayer = 'X';
+        let boardState = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+
+        function makeMove(cellIndex) {
+            if (boardState[cellIndex] === '' && gameActive) {
+                boardState[cellIndex] = currentPlayer;
+                const img = document.createElement('img');
+                img.alt = currentPlayer;
+                if (currentPlayer === 'X') {
+                    img.src = "C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\cruz.png";
+                } else {
+                    img.src ="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\aburrido\circulo.png";
+                }
+                cells[cellIndex].innerHTML = '';
+                cells[cellIndex].appendChild(img);
+                
+                if (checkWin()) {
+                    message.textContent = `¡Jugador ${currentPlayer} gana!`;
+                    gameActive = false;
+                } else if (boardState.indexOf('') === -1) {
+                    message.textContent = '¡Empate!';
+                    gameActive = false;
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    message.textContent = `Turno del jugador ${currentPlayer}`;
+                }
+            }
+        }
+
+        function checkWin() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (const pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>
