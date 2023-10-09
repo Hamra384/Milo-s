@@ -10,19 +10,28 @@
 <body>
   <a href=file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html>
     <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">
+    <div class="logomilos"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
   <a href=file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html>
     <img src="C:\Users\47699199\Desktop\Milos\iniciarsesion.png" alt="iniciarsesion"  class="iniciarsesion">
   <a
-  <div class="container">
-    <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png"alt="Imagen de inicio de sesión" class="Rectangulorosa">
-    <img src="C:\Users\47699199\Desktop\Milos\mediocirculomilos.png" alt="Imagen de inicio de sesión" class="mediocirculomilos">
-      <div class="registration-form">
-          <h2>Iniciar Sesion</h2>
-          <label for="usuario">Username:</label>
-          <input type="text" id="username" name="username" required>
-          <label for="contraseña">Password:</label>
-          <input type="password" id="password" name="password" required>
-          <button type="submit">Login</button>
+  <div class="formulario">
+    <h1>Inicio de sesion de donante</h1>
+    <form action="index.php" method="post">
+         <div class="username">
+            <input type="text" name="DNI" placeholder="Ingrese su DNI" required>
+            <label>Usuario</label>
+         </div>
+         <div class="contrasena">
+            <input type="password" name="Contraseña" placeholder="Ingrese su contraseña" required>
+            <label>Contraseña</label>
+         </div>
+        
+         <input type="submit" value="Iniciar">
+        <tr>
+             <td text-align=center colspan=3> <input type="hidden" name="SI" value="L"></td></tr> 
+</form>
+
+          
         </form>
       </div>
       

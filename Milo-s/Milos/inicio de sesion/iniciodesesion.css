@@ -1,28 +1,35 @@
 .Rectangulorosa{
   width: 100%;
-  margin-top: 25px;
+  margin-top: -15px;
 }
 
 .mediocirculomilos{
   margin-left: 950px;
   position: relative;
-  margin-top: 175px;
+  margin-top: 205px;
+}
+
+.logomilos{
+  width: 100px;
+  margin-left: 50px;
+  margin-top: -19px;
 }
 
 /* Agrega estos estilos a tu archivo CSS existente o crea uno nuevo */
 .registration-form {
   background-color: #ffffff;
-  border-radius: 10px;
+  border-radius: 40px;
   padding: 70px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  width: 300px;
+  box-shadow: 0px 0px 10px rgba(15, 15, 15, 0.2);
+  width: 200px;
+  height: 120px;
   margin: 0 auto -100px;
   text-align: center;
   margin-top: -420px;
 }
 
 .registration-form h2 {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   text-align: center;
 }
 
@@ -32,5 +39,8 @@
   margin-left: 400px;
 }
 
+.tituloiniciarsesion{
+  margin-top: 0;
+}
 
 

@@ -1,47 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Te Ti con Imágenes Interactivas</title>
     <link rel="stylesheet" type="text/css" href="tateti.css">
+    <style>
+        /* Tu estilo CSS existente aquí */
+        .line {
+            position: absolute;
+            background-color: #ff0000; /* Cambia el color según tus preferencias */
+            opacity: 0; /* Inicialmente ocultamos las líneas */
+            transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
+        }
+
+        #line-horizontal {
+            width: 100%;
+            height: 10px;
+            top: 45px; /* Ajusta la posición vertical según tus preferencias */
+        }
+
+        #line-vertical {
+            width: 10px;
+            height: 100%;
+            left: 45px; /* Ajusta la posición horizontal según tus preferencias */
+        }
+
+        #line-diagonal {
+            width: 10px;
+            height: 100%;
+            left: 45px; /* Ajusta la posición horizontal según tus preferencias */
+            transform: rotate(45deg); /* Rotamos la línea para hacerla diagonal */
+        }
+    </style>
 </head>
 <body>
-  
-    <a href=file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html>
+    <a href="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html">
         <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">
     </a>
     <div class="logomilos"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
     <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
-     <div class="tateti"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Ta-Te-Ti.png" alt="Rectángulo" class="tateti"></div>
-     <title></title>
-     <style>
-         .board {
-             display: grid;
-             grid-template-columns: repeat(3, 100px);
-             grid-gap: 5px;
-             margin: 20px auto;
-             width: 300px;
-         }
-         .cell {
-             width: 100px;
-             height: 100px;
-             display: flex;
-             align-items: center;
-             justify-content: center;
-             font-size: 24px;
-             border: 2px solid #000;
-             cursor: pointer;
-         }
-         .circle {
-             color: green;
-         }
-         .cross {
-             color: red;
-         }
-     </style>
- </head>
- <body>
-     <h1></h1>
-     <div class="board" id="board">
+    <div class="tateti"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Ta-Te-Ti.png" alt="Rectángulo" class="tateti"></div>
+
+    <div class="board" id="board">
         <div class="cell" onclick="makeMove(0)"></div>
         <div class="cell" onclick="makeMove(1)"></div>
         <div class="cell" onclick="makeMove(2)"></div>
@@ -53,6 +54,11 @@
         <div class="cell" onclick="makeMove(8)"></div>
     </div>
     <p id="message"></p>
+
+    <!-- Líneas de victoria -->
+    <div class="line" id="line-horizontal"></div>
+    <div class="line" id="line-vertical"></div>
+    <div class="line" id="line-diagonal"></div>
 
     <script>
         const board = document.getElementById('board');
@@ -68,9 +74,12 @@
                 const img = document.createElement('img');
                 img.alt = currentPlayer;
                 if (currentPlayer === 'X') {
-                    img.src = "C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\cruz.png";
+                    img.className = 'cruz'; 
+                    img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\cruz.png"; 
                 } else {
-                    img.src ="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\aburrido\circulo.png";
+                    img.className = 'circulo'; 
+                    img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\circulo.png";
+
                 }
                 cells[cellIndex].innerHTML = '';
                 cells[cellIndex].appendChild(img);
@@ -103,6 +112,7 @@
             }
 
             return false;
+            
         }
     </script>
 </body>
