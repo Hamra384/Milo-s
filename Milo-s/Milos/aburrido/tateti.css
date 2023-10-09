@@ -9,8 +9,8 @@
     margin-top: 25px;
 }
 
-.rectangulorosa{
-    width: 1245px;
+.Rectangulorosa{
+    width: 1250px;
 }
 
 .empezar{
@@ -47,6 +47,12 @@
     grid-gap: 5px;
     margin: 20px auto;
     width: 300px;
+    border: none;
+    grid-gap: 0; /* Eliminar espacio entre las celdas */
+    border-top: none; /* Eliminar borde superior */
+    border-bottom: none; /* Eliminar borde inferior */
+    border-left: none; /* Eliminar borde izquierdo */
+    border-right: none; /* Eliminar borde derecho */
 }
 .cell {
     width: 100px;
@@ -55,7 +61,7 @@
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    border: 2px solid #000;
+    border: 2px solid rgb(221, 208, 208);
     cursor: pointer;
     position: relative; /* Agregamos esta propiedad para posicionar el relleno */
 }
