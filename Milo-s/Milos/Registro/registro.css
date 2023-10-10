@@ -11,6 +11,7 @@
   height: auto;
   margin-bottom: 20px;
   margin-top: -150px;
+  margin-left: -80px;
 
 }
 
@@ -23,7 +24,7 @@
 .logomilos{
   height: 30px;
   margin-left: 110px;
-  margin-top: 0px;
+  margin-top: 2px;
 }
 
 .registration-form {
@@ -58,13 +59,12 @@ label {
 
 .input-icon {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 10px;
   transform: translateY(-50%);
 }
 
 input[type="text"], input[type="email"], input[type="password"] {
-  
   border: 1px solid #ccc;
   border-radius: 5px;
   border-bottom: 2px 
@@ -100,7 +100,7 @@ button[type="submit"] {
 
 #backButton {
   position: absolute;
-  top: -25px; /* Ajusta la distancia desde la parte superior según tus necesidades */
+  top: -32px; /* Ajusta la distancia desde la parte superior según tus necesidades */
   left: 20px; /* Ajusta la distancia desde la izquierda según tus necesidades */
   background: none;
   border: none;
