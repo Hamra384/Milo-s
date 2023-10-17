@@ -15,7 +15,7 @@ setUp();
 //function definitions go under here:
 
 function randomAnswers(){
-  var answers = [1,1,2,2,3,3,4,4,5];
+  var answers = [1,1,2,2,3,3,4,4,5,5];
 
   answers.sort(function(item){
     return .5 - Math.random();
@@ -133,3 +133,4 @@ document.getElementById("reset").addEventListener('click', function(){
   //window.location.reload();
   history.go(0);
 });
+  
