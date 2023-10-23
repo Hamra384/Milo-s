@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="perfilregistrado.css">
+    <style>
+        /* Estilos para el texto editable */
+        .editable {
+            border: none;
+            background: none;
+            outline: none;
+            display: inline-block;
+            border-bottom: 1px solid #ccc; /* Línea inferior */
+            padding: 4px; /* Espacio entre la línea y el texto */
+        }
+    </style>
+    <title>Registro</title>
+</head>
+<div>
+  <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos">
+</div>
+<body>
+    <div class="container">
+        <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Imagen de inicio de sesión" class="Rectangulorosa">
+        <img src="C:\Users\47699199\Desktop\Milos\mediocirculomilos.png" alt="Imagen de inicio de sesión" class="mediocirculomilos">
+        <div class="registration-form">
+          <h2>Perfil registrado</h2>
+          <form>
+            <div class="form-group">
+              <label for="nombre">Nombre del hijo 1:</label>
+              <div class="input-with-icon">
+                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\padreehijo.png" alt="Icono de usuario" class="input-icon">
+                <div id="nombre" class="editable" contenteditable="true" required></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Genero:</label>
+              <div class="input-with-icon">
+                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\genero.png" alt="Icono de correo electrónico" class="input-icon">
+                <div id="email" class="editable" contenteditable="true" required></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="password">Agregar mas hijos:</label>
+              <div class="input-with-icon">
+                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\agregar.png" alt="Icono de llave" class="input-icon">
+                <div id="password" class="editable" contenteditable="true" required></div>
+              </div>
+            </div>
+            <button type="submit">Listo</button>
+          </form>
+        </div>
+        <button id="backButton">
+            <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatrás">
+        </button>
+        
+        <script>
+            const backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', () => {
+                window.location.href ="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html";
+            });
+        </script>
+    </div>
+</body>
+</html>
