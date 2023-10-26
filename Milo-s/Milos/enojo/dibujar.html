@@ -5,6 +5,7 @@
     <link rel="stylesheet" type="text/css" href="dibujar.css">
 </head>
 <body>
+    
   
     <a href=file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html>
         <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">
@@ -12,11 +13,23 @@
     <div class="logomilos"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
     <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
      <div class="adibujar"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\adibujar.png" alt="Rectángulo" class="adibujar"></div>
-     <div classs="button-container">
-        <a href="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\memotest\memotest.html">
-            <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\empezar.png"  class="empezar">
-        </a>
+     <section class="container">
+        <div id="toolbar">
+            
+            <label for="stroke">Color</label>
+            <input id="stroke" name='stroke' type="color">
+            <label for="Grosor">Grosor</label>
+            <input id="lineWidth" name='lineWidth' type="number" value="5">
+            <button id="clear">Borrar</button>
+        </div>
+        <div class="drawing-board">
+            <canvas id="drawing-board"></canvas>
+        </div>
+    </section>
             <div class="arbol"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\arbol.png" alt="Rectángulo" class="arbol"></div>
             <div class="arbol2"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\arbol.png" alt="Rectángulo" class="arbol2"></div>
       </body>
+      
+
+    <script src="dibujar.js"></script>
 </html>
