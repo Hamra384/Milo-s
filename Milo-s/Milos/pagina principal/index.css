@@ -16,8 +16,8 @@
 
 .mediocirculomilos {
     margin-left: 960px; 
-    margin-top: 100px;
-}
+    margin-top: 133px;
+}   
 
 
 .Rectangulorosa {
@@ -33,37 +33,11 @@
     left: 20px; 
 }
 
-.dropbtn {
-    background-color: #4CAF50;
-    color: rgb(132, 59, 59);
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #af9595;
-    min-width: 160px;
-    z-index: 1;
-    top: 100%;
-}
-
-.dropdown-content li {
-    padding: 10px;
-    display: block; 
-    width: 100%;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 
 .logomilos{
-   margin-top: -90px;
+   margin-top: -60px;
     width: 10%;
-    margin-left: 50px;
+    margin-left: -5px;
 }
 
 
@@ -91,6 +65,8 @@
     display: flex;
     align-items: center;
     padding: 10px;
+    width: 4%; 
+    float: left; /* Coloca el menú a la izquierda */
     
 }
 
@@ -134,7 +110,8 @@
 }
 
 .logomilos{
-    margin-top: -100px;
+    margin-top: 0px;
+    margin-left: -1px;
 }
  
 .registrarse{
