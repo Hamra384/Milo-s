@@ -67,7 +67,10 @@
     padding: 10px;
     width: 4%; 
     float: left; /* Coloca el menú a la izquierda */
-    
+}
+
+.enlace-perfil{
+    font-size: 28px;
 }
 
 .menu-icon {
@@ -78,6 +81,17 @@
     color: black; 
 }
 
+.enlace-sonido{
+    font-size: 28px;
+}
+
+.enlace-dequesetrata{
+    font-size: 18px;
+}
+
+.enlace-atras{
+    font-size: 28px;
+}
 .bar {
     width: 30px;
     height: 3px;
@@ -86,22 +100,28 @@
 }
 
 .submenu {
-    display: none;
     list-style: none;
     padding: 0;
     position: absolute;
-    background-color: rgba(140, 133, 135, 0.7);
-    margin-top: 250px;
+    background-color: rgba(236, 34, 94, 1);
+    margin-top: 380px;
     left: 0;
     width: 150px;
+}
+
+.perfil{
+    margin-top: 40px;
 }
 
 .menu:hover .submenu {
     display: block;
 }
 
+
+
 .submenu li {
     padding: 10px;
+    width: 60px;
 }
 
 .submenu a {

@@ -93,3 +93,10 @@
     width: 60px;
 }
 
+#message {
+    color: #FF0000; /* Cambia el color del texto a rojo (#FF0000) */
+    font-size: 34px; /* Cambia el tamaño de fuente a 24px */
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+    /* Otros estilos de texto que desees aplicar */
+    margin-left: 520px;
+}

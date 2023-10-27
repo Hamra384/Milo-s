@@ -4,8 +4,9 @@ var clickedArray = [];
 var time = 0;
 var ready = true;
 var numCompleted = 0;
+var canClick = true;
 
-// Image paths
+// Image paths (sin cambios)
 var imagePaths = [
   "../Imagenes/pibe.png",
   "../Imagenes/pibe.png",
@@ -15,8 +16,6 @@ var imagePaths = [
   "../Imagenes/señorarulos.png",
   "../Imagenes/señordelmemotest.png",
   "../Imagenes/señordelmemotest.png",
-
-
 ];
 
 // Run functions under here:
@@ -25,11 +24,24 @@ setUp();
 // Function definitions go under here:
 
 function randomAnswers() {
-  var answers = imagePaths.concat(imagePaths);
-  answers.sort(function () {
-    return 0.5 - Math.random();
-  });
+  var answers = imagePaths.slice();
+  answers = shuffle(answers); // Mezcla el array de rutas de las imágenes
   return answers;
+}
+
+function shuffle(array) {
+  var currentIndex = array.length, randomIndex, temporaryValue;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
 
 function hide(cell) {
@@ -46,7 +58,7 @@ function complete(cell) {
 
 function reveal(cell) {
   cell.style.backgroundColor = "red";
-  cell.style.backgroundImage = 'url(' + cell.value + ')';
+  cell.style.backgroundImage = 'url(' + cell.getAttribute("data-value") + ')';
   cell.clicked = true;
 }
 
@@ -60,6 +72,14 @@ function startTimer() {
   }
 }
 
+function resetClickedArray() {
+  for (var i = 0; i < clickedArray.length; i++) {
+    hide(clickedArray[i]);
+  }
+  clickedArray = [];
+  canClick = true;
+}
+
 function setUp() {
   var grid = document.getElementsByTagName("td");
   var answers = randomAnswers();
@@ -69,7 +89,7 @@ function setUp() {
 
     cell.completed = false;
     cell.clicked = false;
-    cell.value = answers[i];
+    cell.setAttribute("data-value", answers[i]);
 
     cell.addEventListener("mouseenter", function () {
       if (this.completed == false && this.clicked == false)
@@ -82,8 +102,9 @@ function setUp() {
     });
 
     cell.addEventListener('click', function () {
-      if (ready == false)
+      if (ready == false || !canClick)
         return;
+
       startTimer();
       if (this.clicked == false && this.completed == false) {
         clickedArray.push(this);
@@ -91,39 +112,26 @@ function setUp() {
       }
 
       if (clickedArray.length == 2) {
-        if (clickedArray[0].value == clickedArray[1].value) {
-          // If a matching pair is found
+        canClick = false;
+        if (clickedArray[0].getAttribute("data-value") == clickedArray[1].getAttribute("data-value")) {
           complete(clickedArray[0]);
           complete(clickedArray[1]);
 
           clickedArray = [];
+          canClick = true;
 
           if (numCompleted == 8) {
-            alert("You won in " + time + " seconds!");
+            alert("Ganaste en " + time + " segundos.");
             clearInterval(interval);
           }
         } else {
-          // If a matching pair is not found
-          ready = false;
-          document.getElementById("gridTable").style.border = "5px solid red";
-
-          setTimeout(function () {
-            // After a 500ms delay
-            hide(clickedArray[0]);
-            hide(clickedArray[1]);
-
-            clickedArray = [];
-
-            ready = true;
-            document.getElementById("gridTable").style.border = "5px solid black";
-          }, 500);
+          setTimeout(resetClickedArray, 2000); // Restablece después de 2 segundos
         }
       }
     });
   }
-}
 
-document.getElementById("reset").addEventListener('click', function () {
-  // window.location.reload();
-  history.go(0);
-});
+  document.getElementById("reset").addEventListener('click', function () {
+    history.go(0);
+  });
+}
