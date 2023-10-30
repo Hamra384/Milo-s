@@ -6,7 +6,7 @@ var ready = true;
 var numCompleted = 0;
 var canClick = true;
 
-// Image paths (sin cambios)
+// Image paths (actualizado con 5 imágenes iguales)
 var imagePaths = [
   "../Imagenes/pibe.png",
   "../Imagenes/pibe.png",
@@ -16,12 +16,77 @@ var imagePaths = [
   "../Imagenes/señorarulos.png",
   "../Imagenes/señordelmemotest.png",
   "../Imagenes/señordelmemotest.png",
+  "../Imagenes/ultima.png",
+  "../Imagenes/ultima.png",
 ];
 
 // Run functions under here:
 setUp();
 
 // Function definitions go under here:
+
+// ...
+
+function revealLastPair() {
+  var lastPair = document.querySelectorAll('td[data-value="' + imagePaths[imagePaths.length - 1] + '"]');
+
+  setTimeout(function () {
+    reveal(lastPair[0]);
+    reveal(lastPair[1]);
+    setTimeout(function () {
+      alert("¡Ganaste en " + time + " segundos! ¡Felicidades!");
+    }, 1000);
+  }, 2000);
+}
+
+
+
+// ...
+
+function setUp() {
+  var grid = document.getElementsByTagName("td");
+  var answers = randomAnswers();
+
+  for (var i = 0; i < grid.length; i++) {
+    var cell = grid[i];
+
+    // ...
+
+    cell.addEventListener('click', function () {
+      if (ready == false || !canClick)
+        return;
+
+      startTimer();
+      if (this.clicked == false && this.completed == false) {
+        clickedArray.push(this);
+        reveal(this);
+      }
+
+      if (clickedArray.length == 2) {
+        canClick = false;
+        if (clickedArray[0].getAttribute("data-value") == clickedArray[1].getAttribute("data-value")) {
+          complete(clickedArray[0]);
+          complete(clickedArray[1]);
+
+          clickedArray = [];
+          canClick = true;
+
+          if (numCompleted == 10) { // Cambia 8 a 10 para detectar 10 pares
+            // Mostrar el último par antes de mostrar el mensaje de victoria
+            revealLastPair();
+          }
+        } else {
+          setTimeout(resetClickedArray, 2000);
+        }
+      }
+    });
+  }
+
+  document.getElementById("reset").addEventListener('click', function () {
+    history.go(0);
+  });
+}
+
 
 function randomAnswers() {
   var answers = imagePaths.slice();
@@ -46,18 +111,18 @@ function shuffle(array) {
 
 function hide(cell) {
   cell.style.backgroundColor = "grey";
-  cell.innerHTML = "";
+  cell.style.backgroundImage = 'none'; // Oculta la imagen
   cell.clicked = false;
 }
 
 function complete(cell) {
   numCompleted++;
   cell.completed = true;
-  cell.style.backgroundColor = "purple";
+  cell.style.backgroundColor = " rgba(255, 0, 0, 0.685);"
 }
 
 function reveal(cell) {
-  cell.style.backgroundColor = "red";
+  cell.style.backgroundColor = " rgba(255, 0, 0, 0.685);"
   cell.style.backgroundImage = 'url(' + cell.getAttribute("data-value") + ')';
   cell.clicked = true;
 }
@@ -74,7 +139,11 @@ function startTimer() {
 
 function resetClickedArray() {
   for (var i = 0; i < clickedArray.length; i++) {
-    hide(clickedArray[i]);
+    var cell = clickedArray[i];
+    // Restablecer el fondo a su estado original
+    cell.style.backgroundColor = " rgba(255, 0, 0, 0.685);"; // O el color de fondo que deseas
+    cell.style.backgroundImage = 'none'; // Ocultar la imagen
+    cell.clicked = false;
   }
   clickedArray = [];
   canClick = true;
@@ -91,16 +160,7 @@ function setUp() {
     cell.clicked = false;
     cell.setAttribute("data-value", answers[i]);
 
-    cell.addEventListener("mouseenter", function () {
-      if (this.completed == false && this.clicked == false)
-        this.style.background = "orange";
-    });
-
-    cell.addEventListener("mouseleave", function () {
-      if (this.completed == false && this.clicked == false)
-        this.style.background = "grey";
-    });
-
+    
     cell.addEventListener('click', function () {
       if (ready == false || !canClick)
         return;
@@ -120,12 +180,9 @@ function setUp() {
           clickedArray = [];
           canClick = true;
 
-          if (numCompleted == 8) {
-            alert("Ganaste en " + time + " segundos.");
-            clearInterval(interval);
-          }
+         
         } else {
-          setTimeout(resetClickedArray, 2000); // Restablece después de 2 segundos
+          setTimeout(resetClickedArray, 1000); // Restablece después de 2 segundos
         }
       }
     });
@@ -134,4 +191,14 @@ function setUp() {
   document.getElementById("reset").addEventListener('click', function () {
     history.go(0);
   });
+}
+
+function startTimer() {
+  if (started === false) {
+    interval = setInterval(function () {
+      time++;
+      document.getElementById("timer").innerHTML = "Tiempo transcurrido: " + time + " segundos";
+    }, 1000);
+    started = true;
+  }
 }

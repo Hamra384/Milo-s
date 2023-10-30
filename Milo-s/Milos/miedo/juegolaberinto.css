@@ -10,11 +10,12 @@
 
 .arbol{
   margin-top: 260px;
+  position: static;
 }
 
 .arbol2{
   margin-left: 1050px;
-  margin-top: -250px;
+  margin-top: -240px;
 }
 html,
 body {
@@ -106,8 +107,8 @@ select:focus {
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-left: -150px;
-  margin-top: -150px;
+  
+ 
 }
 #page {
   font-family: "Segoe UI", Arial, sans-serif;

@@ -1,26 +1,46 @@
 .logomilos img{
     width: 10%;
-    margin-left: 58px;
-    margin-top: -80px;
+    margin-left: 68px;
+    top: -5px;
+    position: relative;
 }
 
-.flechaatras img{
+.flechaatras {
     cursor: pointer;
-
+    margin-top: -5px;
+   position: absolute   
 }
 
 .Rectangulorosa {
     width: 1250px;
-    margin-top: 7px;
+    margin-top: -5px;
 }
 
+.reiniciar{
+    margin-top: -290px;
+background-color: #ee5353; /* Color de fondo del botón */
+      color: #fff; /* Color del texto del botón */
+      padding: 15px 30px; /* Espaciado interior del botón (arriba/abajo y izquierda/derecha) */
+      border: none; /* Sin borde */
+      cursor: pointer; /* Cursor al pasar por encima del botón */
+      border-radius: 5px; /* Borde redondeado */
+      font-size: 16px; /* Tamaño de fuente */
+      transform: translate(100px);
+      position: relative;
+      top: 50px;
+      left: 485px;
+    }
+
 .arbol {
-    margin-top: -285px;
+    margin-top: -280px;
     margin-left: 1100px;
 }
 
+
+
 .arbol2 {
-    margin-top: -142px;
+    margin-top: -107px;
+    margin-left: 50px;
 }
 
 .memotest {
@@ -30,15 +50,16 @@
 
 table {
     margin-left: 310px; /* Ajusta el margen izquierdo para centrar la tabla */
-    border-collapse: collapse;
+    
 }
 
 td {
     width: 130px; /* Ajusta el ancho de las celdas según tus necesidades */
     height: 150px; /* Ajusta el alto de las celdas según tus necesidades */
     text-align: center;
-    background-color: rgb(243, 83, 83);
+    background-color: rgba(243, 83, 83, 0.685);
     background-size: cover; /* Hace que la imagen de fondo cubra toda la celda */
-    background-repeat: no-repeat;
+  
 }
+
 

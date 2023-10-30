@@ -9,16 +9,16 @@
 </head>
 <body>
     <!-- Agrega un enlace para regresar -->
-    <a href="index.html">
+    <a href="index.html" class="flechaatras">
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png" alt="flechaatras">
     </a>
     
     <div class="logomilos">
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="logomilos">
     </div>
-    
+    <div class="Rectangulorosa">
     <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
-    
+</div>
     <div class="memotest">
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Memotest.png" alt="Memotest">
     </div>
@@ -39,6 +39,8 @@
             <td data-value="../Imagenes/ultima.png"></td>
         </tr>
     </table>
+
+    <button id="reset" class="reiniciar">Reiniciar</button>
     
     <div class="arbol2">
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\arbol.png" alt="arbol2">
@@ -48,10 +50,10 @@
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\arbol.png" alt="arbol">
     </div>
     
-    <div id="timer">Time Elapsed: 0</div>
-    
-    <button id="reset">Reiniciar</button>
-    
+    <div id="mensaje-felicitaciones" class="mensaje-oculto">
+        ¡Felicidades! Has completado el Memotest en {{tiempo}} segundos.
+      </div>
+      
     <script src="juegomemotest.js"></script>
 </body>
 </html>

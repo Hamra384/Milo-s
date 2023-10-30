@@ -569,6 +569,8 @@ function makeMaze() {
     // Ocultar el menú después de iniciar el juego
     var menuContainer = document.getElementById("menu");
     menuContainer.style.display = "none";
+    
 }
+
 
     }
