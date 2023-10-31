@@ -551,6 +551,12 @@ window.onresize = function () {
 };
 
 function makeMaze() {
+
+    let claseSb = document.getElementById("arbol")
+	let claseSc = document.getElementById("arbol2")
+	claseSb.classList.toggle("arbolCollapse")
+	claseSc.classList.toggle("arbol2Collapse")
+
     //document.getElementById("mazeCanvas").classList.add("border");
     if (player != undefined) {
         player.unbindKeyDown();
@@ -565,12 +571,25 @@ function makeMaze() {
     if (document.getElementById("mazeContainer").style.opacity < "100") {
         document.getElementById("mazeContainer").style.opacity = "100";
 
-    
+    }
     // Ocultar el menú después de iniciar el juego
     var menuContainer = document.getElementById("menu");
     menuContainer.style.display = "none";
+
+    document.addEventListener("DOMContentLoaded", function() {
+        const startButton = document.getElementById("startMazeBtn");
     
+        startButton.addEventListener("click", function() {
+            // Agregar aquí la lógica del juego.
+            // En este ejemplo, no se aplica ninguna transformación a las imágenes al hacer clic en el botón "Start".
+        });
+    });
+    
+        
+    
+   
+	
+    
+    
+
 }
-
-
-    }

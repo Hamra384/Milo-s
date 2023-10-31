@@ -11,28 +11,34 @@
 .arbol{
   margin-top: 260px;
   position: static;
+  
 }
 
 .arbol2{
   margin-left: 1050px;
   margin-top: -250px;
 }
+
+.arbolcollapse{
+  margin-top: 260px;
+  position: static;
+  
+}
+
+.arbol2collapse{
+  position: relative;
+  top: 40px;
+}
 html,
 body {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  padding: 0;
-  margin: 0;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-color:#f7f3f2;
 }
 #mazeContainer {
   transition-property: opacity;
-  transition-duration: 1s;
+  transition-duration: 2s;
   transition-timing-function: linear;
   top: 75px;
   opacity: 0;
@@ -41,7 +47,7 @@ body {
   margin: auto;
 }
 #mazeContainer #mazeCanvas {
-  margin: 0;
+ 
   display: block;
   border: solid 1px black;
 }
@@ -80,9 +86,8 @@ select:focus {
   display: inline-block;
 }
 .custom-select select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+
+  
   background-image: url("data:image/png; base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAh0lEQVQ4T93TMQrCUAzG8V9x8QziiYSuXdzFC7h4AcELOPQAdXYovZCHEATlgQV5GFTe1ozJlz/kS1IpjKqw3wQBVyy++JI0y1GTe7DCBbMAckeNIQKk/BanALBB+16LtnDELoMcsM/BESDlz2heDR3WePwKSLo5eoxz3z6NNcFD+vu3ij14Aqz/DxGbKB7CAAAAAElFTkSuQmCC");
   background-repeat: no-repeat;
   background-position: 125px center;

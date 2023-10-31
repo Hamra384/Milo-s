@@ -10,51 +10,62 @@ canvas.height = window.innerHeight - canvasOffsetY;
 
 let isPainting = false;
 let lineWidth = 5;
-let startX;
-let startY;
 
-toolbar.addEventListener('click', e => {
+document.addEventListener('mousedown', (e) => {
+    if (e.target === canvas) {
+        isPainting = true;
+        const x = e.clientX - canvasOffsetX;
+        const y = e.clientY - canvasOffsetY;
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+    }
+});
+
+document.addEventListener('mouseup', () => {
+    isPainting = false;
+});
+
+document.addEventListener('mousemove', (e) => {
+    if (!isPainting) {
+        return;
+    }
+
+    const x = e.clientX - canvasOffsetX;
+    const y = e.clientY - canvasOffsetY;
+
+    ctx.lineWidth = lineWidth;
+    ctx.lineCap = 'round';
+
+    ctx.lineTo(x, y);
+    ctx.stroke();
+});
+
+toolbar.addEventListener('click', (e) => {
     if (e.target.id === 'clear') {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 });
 
-toolbar.addEventListener('change', e => {
-    if(e.target.id === 'stroke') {
+toolbar.addEventListener('change', (e) => {
+    if (e.target.id === 'stroke') {
         ctx.strokeStyle = e.target.value;
     }
 
-    if(e.target.id === 'lineWidth') {
+    if (e.target.id === 'lineWidth') {
         lineWidth = e.target.value;
     }
-    
 });
 
-const draw = (e) => {
-    if(!isPainting) {
-        return;
+toolbar.addEventListener('change', (e) => {
+    if (e.target.id === 'stroke') {
+        ctx.strokeStyle = e.target.value;
     }
 
-    ctx.lineWidth = lineWidth;
-    ctx.lineCap = 'round';
-
-    
-
-    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY - canvasOffsetY);
-
-    ctx.stroke();
-}
-
-canvas.addEventListener('mousedown', (e) => {
-    isPainting = true;
-    startX = e.clientX;
-    startY = e.clientY;
+    if (e.target.id === 'lineWidth') {
+        // Limita el grosor de la línea a un máximo de 100
+        lineWidth = Math.min(e.target.value, 100);
+        // Actualiza el valor en el input para reflejar el límite
+        e.target.value = lineWidth;
+    }
 });
 
-canvas.addEventListener('mouseup', e => {
-    isPainting = false;
-    ctx.stroke();
-    ctx.beginPath();
-});
-
-canvas.addEventListener('mousemove', draw);
