@@ -45,8 +45,9 @@
     display: grid;
     grid-template-columns: repeat(3, 100px);
     grid-gap: 5px;
-    margin: 20px auto;
-    width: 300px;
+    margin: 30px auto;
+    width: 350px;
+    height: 300px;
     border: none;
     grid-gap: 0; /* Eliminar espacio entre las celdas */
     border-top: none; /* Eliminar borde superior */
@@ -56,11 +57,11 @@
 }
 .cell {
     width: 100px;
-    height: 100px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
+    font-size: 104px;
     border: 2px solid rgb(221, 208, 208);
     cursor: pointer;
     position: relative; /* Agregamos esta propiedad para posicionar el relleno */
@@ -70,7 +71,7 @@
 }
 .cross {
     color: transparent; /* Hacemos el texto transparente */
-    font-size: 110px; /* Tamaño de la X aún más grande */
+    font-size: 170px; /* Tamaño de la X aún más grande */
 }
 
 /* Estilo para el relleno rojo */
@@ -86,11 +87,20 @@
 }
 
 .cruz{
-    width: 50px;
+    width: 90px;
 }
 
+.victory-line {
+    position: absolute;
+    background-color: #00ff00; /* Cambia el color según tus preferencias */
+    opacity: 0; /* Inicialmente ocultamos la línea de victoria */
+    transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
+    z-index: 1; /* Asegura que la línea de victoria esté sobre las casillas */
+}
+
+
 .circulo{
-    width: 60px;
+    width: 90px;
 }
 
 #message {

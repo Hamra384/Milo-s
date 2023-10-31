@@ -13,25 +13,6 @@
             opacity: 0; /* Inicialmente ocultamos las líneas */
             transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
         }
-
-        #line-horizontal {
-            width: 100%;
-            height: 10px;
-            top: 45px; /* Ajusta la posición vertical según tus preferencias */
-        }
-
-        #line-vertical {
-            width: 10px;
-            height: 100%;
-            left: 45px; /* Ajusta la posición horizontal según tus preferencias */
-        }
-
-        #line-diagonal {
-            width: 10px;
-            height: 100%;
-            left: 45px; /* Ajusta la posición horizontal según tus preferencias */
-            transform: rotate(45deg); /* Rotamos la línea para hacerla diagonal */
-        }
     </style>
 </head>
 <body>
@@ -39,7 +20,7 @@
         <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">
     </a>
     <div class="logomilos"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
-    <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
+    <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo" class "Rectangulorosa">
     <div class="tateti"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Ta-Te-Ti.png" alt="Rectángulo" class="tateti"></div>
 
     <div class="board" id="board">
@@ -55,10 +36,8 @@
     </div>
     <p id="message"></p>
 
-    <!-- Líneas de victoria -->
-    <div class="line" id="line-horizontal"></div>
-    <div class="line" id="line-vertical"></div>
-    <div class="line" id="line-diagonal"></div>
+    <!-- Línea de victoria -->
+    <div class="line" id="victory-line"></div>
 
     <script>
         const board = document.getElementById('board');
@@ -74,22 +53,34 @@
                 const img = document.createElement('img');
                 img.alt = currentPlayer;
                 if (currentPlayer === 'X') {
-                    img.className = 'cruz'; 
-                    img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\cruz.png"; 
+                    img.className = 'cruz';
+                    img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\cruz.png";
                 } else {
-                    img.className = 'circulo'; 
+                    img.className = 'circulo';
                     img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\circulo.png";
-
                 }
                 cells[cellIndex].innerHTML = '';
                 cells[cellIndex].appendChild(img);
-                
+
                 if (checkWin()) {
                     message.textContent = `¡Jugador ${currentPlayer} gana!`;
+
+                    // Muestra la línea de victoria y atraviesa las tres casillas ganadoras
+                    const victoryLine = document.getElementById('victory-line');
+                    const winningCombination = getWinningCombination();
+                    if (winningCombination) {
+                        const [a, b, c] = winningCombination;
+                        const [left, top, width, height] = getLinePosition(a, b, c);
+                        victoryLine.style.left = `${left}px`;
+                        victoryLine.style.top = `${top}px`;
+                        victoryLine.style.width = `${width}px`;
+                        victoryLine.style.height = `${height}px`;
+                        victoryLine.style.opacity = 1;
+                    }
+
                     gameActive = false;
                 } else if (boardState.indexOf('') === -1) {
                     message.textContent = '¡Empate!';
-                    gameActive = false;
                 } else {
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                     message.textContent = `Turno del jugador ${currentPlayer}`;
@@ -112,7 +103,32 @@
             }
 
             return false;
-            
+        }
+
+        function getWinningCombination() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (const pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+                    return [a, b, c];
+                }
+            }
+
+            return null;
+        }
+
+        function getLinePosition(a, b, c) {
+            const left = Math.min(a % 3, b % 3, c % 3) * 100 + 45;
+            const top = Math.min(Math.floor(a / 3), Math.floor(b / 3), Math.floor(c / 3)) * 100 + 45;
+            const width = (Math.max(a % 3, b % 3, c % 3) - Math.min(a % 3, b % 3, c % 3) + 1) * 100 - 10;
+            const height = (Math.max(Math.floor(a / 3), Math.floor(b / 3), Math.floor(c / 3)) - Math.min(Math.floor(a / 3), Math.floor(b / 3), Math.floor(c / 3)) + 1) * 100 - 10;
+
+            return [left, top, width, height];
         }
     </script>
 </body>
