@@ -6,7 +6,7 @@
 
 .tateti{
     margin-left: 280px;
-    margin-top: 25px;
+    margin-top: 1px;
 }
 
 .Rectangulorosa{
@@ -97,6 +97,16 @@
     transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
     z-index: 1; /* Asegura que la línea de victoria esté sobre las casillas */
 }
+
+.reiniciar-button{
+   top: 50px;
+   margin-left: 605px;
+   background-color: rgb(223, 58, 71);
+    color: white; /* Cambiar el color del texto para que sea legible */
+    width: 120px;
+    height: 40px;
+  }
+  
 
 
 .circulo{

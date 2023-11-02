@@ -16,12 +16,38 @@
     </style>
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Tus metadatos y enlaces a archivos CSS aquí -->
+</head>
+<body>
     <a href="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html">
         <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">
     </a>
-    <div class="logomilos"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
-    <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo" class "Rectangulorosa">
-    <div class="tateti"><img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Ta-Te-Ti.png" alt="Rectángulo" class="tateti"></div>
+
+    <div class="logomilos">
+        <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Logo Milos" class="logomilos">
+    </div>
+
+    <div class="Rectangulorosa">
+        <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo Rosa" class="Rectangulorosa">
+    </div>
+
+    <div class="tateti">
+        <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Ta-Te-Ti.png" alt="Ta-Te-Ti" class="tateti">
+    </div>
+
+    <div class="restart-button"></div>
+    <button id="restart-button" class="reiniciar-button" onclick="restartGame()">Reiniciar Juego</button>
+</div>
+
+
+    <!-- Resto de tu contenido HTML -->
+</body>
+</html>
+
+
 
     <div class="board" id="board">
         <div class="cell" onclick="makeMove(0)"></div>
@@ -39,10 +65,13 @@
     <!-- Línea de victoria -->
     <div class="line" id="victory-line"></div>
 
+    
+
     <script>
         const board = document.getElementById('board');
         const cells = document.querySelectorAll('.cell');
         const message = document.getElementById('message');
+        const restartButton = document.getElementById('restart-button');
         let currentPlayer = 'X';
         let boardState = ['', '', '', '', '', '', '', '', ''];
         let gameActive = true;
@@ -123,13 +152,43 @@
         }
 
         function getLinePosition(a, b, c) {
-            const left = Math.min(a % 3, b % 3, c % 3) * 100 + 45;
-            const top = Math.min(Math.floor(a / 3), Math.floor(b / 3), Math.floor(c / 3)) * 100 + 45;
-            const width = (Math.max(a % 3, b % 3, c % 3) - Math.min(a % 3, b % 3, c % 3) + 1) * 100 - 10;
-            const height = (Math.max(Math.floor(a / 3), Math.floor(b / 3), Math.floor(c / 3)) - Math.min(Math.floor(a / 3), Math.floor(b / 3), Math.floor(c / 3)) + 1) * 100 - 10;
+            const left = 45;
+            const top = 45;
+            const width = 10;
+            const height = 10;
+
+            if (a === 0 && c === 2) {
+                // Línea horizontal superior
+                top += a * 100;
+                width += 265;
+            } else if (a === 0 && c === 6) {
+                // Línea vertical izquierda
+                left += a * 100;
+                height += 265;
+            } else if (a === 0 && c === 8) {
+                // Línea diagonal de izquierda a derecha
+                width += 375;
+                height += 375;
+            } else if (a === 2 && c === 6) {
+                // Línea vertical derecha
+                left += 265;
+                height += 265;
+            }
 
             return [left, top, width, height];
         }
+
+        function restartGame() {
+    for (let i = 0; i < boardState.length; i++) {
+        boardState[i] = '';
+        cells[i].innerHTML = '';
+    }
+    gameActive = true;
+    message.textContent = ''; // Esto establece el contenido del mensaje en un string vacío
+    const victoryLine = document.getElementById('victory-line');
+    victoryLine.style.opacity = 0;
+}
+
     </script>
 </body>
 </html>
