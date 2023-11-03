@@ -6,7 +6,7 @@
 
 .adibujar{
     margin-left: 225px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .Rectangulorosa{
@@ -15,12 +15,14 @@
 
 .empezar{
     height: 90px;
-    margin-left:520px;
-    margin-top: 285px;
+    margin-left:470px;
+    margin-top: 20px;
+    width: 250px;
+    
 }
 
 .arbol{
-    margin-top: -90px;
+    margin-top: -130px;
     margin-left: 20px;
 }
 
@@ -31,7 +33,7 @@
 }
 
 .ayudayconsejos{
-    width: 550px;
+    width: 650px;
     margin-left: 140px;
 }
 

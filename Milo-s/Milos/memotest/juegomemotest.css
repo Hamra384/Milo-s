@@ -36,10 +36,22 @@ background-color: #ee5353; /* Color de fondo del botón */
     margin-left: 1100px;
 }
 
+/* Estilos para el temporizador */
+#timer {
+    font-size: 24px; /* Tamaño de la fuente */
+    color: #FF0000; /* Color del texto (rojo en este caso) */
+    background-color: #FFFFFF; /* Color de fondo */
+    padding: 10px; /* Espaciado interior para mayor legibilidad */
+    top: 300px;
+    margin-left: 250px;
+    
+}
+
+
 
 
 .arbol2 {
-    margin-top: -107px;
+    margin-top: -157px;
     margin-left: 50px;
 }
 

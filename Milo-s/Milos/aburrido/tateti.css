@@ -99,12 +99,14 @@
 }
 
 .reiniciar-button{
-   top: 50px;
-   margin-left: 605px;
+margin-top: 50px;
+   margin-left: 600px;
    background-color: rgb(223, 58, 71);
     color: white; /* Cambiar el color del texto para que sea legible */
-    width: 120px;
+    width: 110px;
     height: 40px;
+    font-size: 15px; /* Ajusta el tamaño de fuente según tus preferencias */
+
   }
   
 
