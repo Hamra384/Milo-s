@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ta Te Ti con Imágenes Interactivas</title>
+    <link rel="stylesheet" type="text/css" href="tateti.css">
+    <style>
+        /* Tu estilo CSS existente aquí */
+        .line {
+            position: absolute;
+            background-color: #ff0000; /* Cambia el color según tus preferencias */
+            opacity: 0; /* Inicialmente ocultamos las líneas */
+            transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Tus metadatos y enlaces a archivos CSS aquí -->
+</head>
+<body>
+    <a href="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html">
+        <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">
+    </a>
+
+    <div class="logomilos">
+        <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Logo Milos" class="logomilos">
+    </div>
+
+    <div class="Rectangulorosa">
+        <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Rectángulo Rosa" class="Rectangulorosa">
+    </div>
+
+    <div class="tateti">
+        <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Ta-Te-Ti.png" alt="Ta-Te-Ti" class="tateti">
+    </div>
+
+    <div class="restart-button"></div>
+    <button id="restart-button" class="reiniciar-button" onclick="restartGame()">Reiniciar Juego</button>
+</div>
+
+
+    <!-- Resto de tu contenido HTML -->
+</body>
+</html>
+
+
+
+    <div class="board" id="board">
+        <div class="cell" onclick="makeMove(0)"></div>
+        <div class="cell" onclick="makeMove(1)"></div>
+        <div class="cell" onclick="makeMove(2)"></div>
+        <div class="cell" onclick="makeMove(3)"></div>
+        <div class="cell" onclick="makeMove(4)"></div>
+        <div class="cell" onclick="makeMove(5)"></div>
+        <div class="cell" onclick="makeMove(6)"></div>
+        <div class="cell" onclick="makeMove(7)"></div>
+        <div class="cell" onclick="makeMove(8)"></div>
+    </div>
+    <p id="message"></p>
+
+    <!-- Línea de victoria -->
+    <div class="line" id="victory-line"></div>
+
+    
+
+    <script>
+        const board = document.getElementById('board');
+        const cells = document.querySelectorAll('.cell');
+        const message = document.getElementById('message');
+        const restartButton = document.getElementById('restart-button');
+        let currentPlayer = 'X';
+        let boardState = ['', '', '', '', '', '', '', '', ''];
+        let gameActive = true;
+
+        function makeMove(cellIndex) {
+            if (boardState[cellIndex] === '' && gameActive) {
+                boardState[cellIndex] = currentPlayer;
+                const img = document.createElement('img');
+                img.alt = currentPlayer;
+                if (currentPlayer === 'X') {
+                    img.className = 'cruz';
+                    img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\cruz.png";
+                } else {
+                    img.className = 'circulo';
+                    img.src = "C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\Imagenes\\circulo.png";
+                }
+                cells[cellIndex].innerHTML = '';
+                cells[cellIndex].appendChild(img);
+
+                if (checkWin()) {
+                    message.textContent = `¡Jugador ${currentPlayer} gana!`;
+
+                    // Muestra la línea de victoria y atraviesa las tres casillas ganadoras
+                    const victoryLine = document.getElementById('victory-line');
+                    const winningCombination = getWinningCombination();
+                    if (winningCombination) {
+                        const [a, b, c] = winningCombination;
+                        const [left, top, width, height] = getLinePosition(a, b, c);
+                        victoryLine.style.left = `${left}px`;
+                        victoryLine.style.top = `${top}px`;
+                        victoryLine.style.width = `${width}px`;
+                        victoryLine.style.height = `${height}px`;
+                        victoryLine.style.opacity = 1;
+                    }
+
+                    gameActive = false;
+                } else if (boardState.indexOf('') === -1) {
+                    message.textContent = '¡Empate!';
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    message.textContent = `Turno del jugador ${currentPlayer}`;
+                }
+            }
+        }
+
+        function checkWin() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (const pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        function getWinningCombination() {
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8],
+                [0, 3, 6], [1, 4, 7], [2, 5, 8],
+                [0, 4, 8], [2, 4, 6]
+            ];
+
+            for (const pattern of winPatterns) {
+                const [a, b, c] = pattern;
+                if (boardState[a] && boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+                    return [a, b, c];
+                }
+            }
+
+            return null;
+        }
+
+        function getLinePosition(a, b, c) {
+            const left = 45;
+            const top = 45;
+            const width = 10;
+            const height = 10;
+
+            if (a === 0 && c === 2) {
+                // Línea horizontal superior
+                top += a * 100;
+                width += 265;
+            } else if (a === 0 && c === 6) {
+                // Línea vertical izquierda
+                left += a * 100;
+                height += 265;
+            } else if (a === 0 && c === 8) {
+                // Línea diagonal de izquierda a derecha
+                width += 375;
+                height += 375;
+            } else if (a === 2 && c === 6) {
+                // Línea vertical derecha
+                left += 265;
+                height += 265;
+            }
+
+            return [left, top, width, height];
+        }
+
+        function restartGame() {
+    for (let i = 0; i < boardState.length; i++) {
+        boardState[i] = '';
+        cells[i].innerHTML = '';
+    }
+    gameActive = true;
+    message.textContent = ''; // Esto establece el contenido del mensaje en un string vacío
+    const victoryLine = document.getElementById('victory-line');
+    victoryLine.style.opacity = 0;
+}
+
+    </script>
+</body>
+</html>

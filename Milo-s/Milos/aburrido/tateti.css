@@ -1,0 +1,124 @@
+.logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+}
+
+.empezar{
+    height: 80px;
+    margin-left:500px;
+    margin-top: 180px;
+}
+
+.arbol{
+    margin-top: -145px;
+    margin-left: 20px;
+}
+
+.arbol2{
+    margin-left: 115px;
+    margin-top: -135px;
+    
+}
+
+.ajugar{
+    margin-left: 470px;
+    margin-top: -140px;
+}
+
+.mediocirculoverde{
+    height: 270px;
+    margin-left: 500px;
+}
+
+/* style.css */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin: 30px auto;
+    width: 350px;
+    height: 300px;
+    border: none;
+    grid-gap: 0; /* Eliminar espacio entre las celdas */
+    border-top: none; /* Eliminar borde superior */
+    border-bottom: none; /* Eliminar borde inferior */
+    border-left: none; /* Eliminar borde izquierdo */
+    border-right: none; /* Eliminar borde derecho */
+}
+.cell {
+    width: 100px;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 104px;
+    border: 2px solid rgb(221, 208, 208);
+    cursor: pointer;
+    position: relative; /* Agregamos esta propiedad para posicionar el relleno */
+}
+.circle {
+    color: green;
+}
+.cross {
+    color: transparent; /* Hacemos el texto transparente */
+    font-size: 170px; /* Tamaño de la X aún más grande */
+}
+
+/* Estilo para el relleno rojo */
+.cross::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    z-index: -1; /* Coloca el relleno detrás de la X */
+}
+
+.cruz{
+    width: 90px;
+}
+
+.victory-line {
+    position: absolute;
+    background-color: #00ff00; /* Cambia el color según tus preferencias */
+    opacity: 0; /* Inicialmente ocultamos la línea de victoria */
+    transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
+    z-index: 1; /* Asegura que la línea de victoria esté sobre las casillas */
+}
+
+.reiniciar-button{
+margin-top: 50px;
+   margin-left: 600px;
+   background-color: rgb(223, 58, 71);
+    color: white; /* Cambiar el color del texto para que sea legible */
+    width: 110px;
+    height: 40px;
+    font-size: 15px; /* Ajusta el tamaño de fuente según tus preferencias */
+
+  }
+  
+
+
+.circulo{
+    width: 90px;
+}
+
+#message {
+    color: #FF0000; /* Cambia el color del texto a rojo (#FF0000) */
+    font-size: 34px; /* Cambia el tamaño de fuente a 24px */
+    font-family: Arial, sans-serif; /* Cambia la fuente del texto */
+    /* Otros estilos de texto que desees aplicar */
+    margin-left: 520px;
+}

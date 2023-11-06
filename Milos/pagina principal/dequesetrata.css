@@ -23,8 +23,8 @@
 /* Estilos para el contenedor de la imagen del rectángulo */
 .Rectangulorosa {
     text-align: center;
-    padding: 100px 0; /* Ajusta el espaciado según sea necesario */
-    width: 95%;
+    padding: 100px ; /* Ajusta el espaciado según sea necesario */
+    width: 100%;
     margin-top: -100px;
 }
 

@@ -3,11 +3,11 @@
     position: relative;
     top: 50px;
     position: relative;
-    top: 5px; 
+    top: 10px; 
 }
 
 .mediocirculomilos{
-    margin-left: 1074px;
+    margin-left: 74%;
     position: relative;
     top: 254px;
 }
@@ -22,4 +22,18 @@
     margin-left: 100px;
     position: relative;
     top: -100px;
+}
+
+.logomilos{
+    height: 35px;
+    margin-left: 10px;
+    margin-top: -0px;
+}
+
+.flechaatras{
+    margin-top: 0px;
+}
+
+.agregarperfil2{
+    margin-left: -100px;
 }

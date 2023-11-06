@@ -1,0 +1,145 @@
+.registrarse {
+    position: absolute;
+    top: 300px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+}
+
+
+.iniciarsesion {
+    position: absolute;
+    top: 220px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.mediocirculomilos {
+    margin-left: 960px; 
+    margin-top: 133px;
+}   
+
+
+.Rectangulorosa {
+    text-align: center;
+    padding: 100px 0; 
+    width: 95%;
+    margin-top: -100px;
+}
+
+.dropdown {
+    position: absolute;
+    top: -150px;
+    left: 20px; 
+}
+
+
+.logomilos{
+   margin-top: -60px;
+    width: 10%;
+    margin-left: -5px;
+}
+
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    color: #00aaff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bienvenidos{
+  margin-top: -100px;
+  margin-left: 350px;
+}
+
+.menu {
+    position: relative;
+    background-color: white; 
+    color: black;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 4%; 
+    float: left; /* Coloca el menú a la izquierda */
+}
+
+.enlace-perfil{
+    font-size: 28px;
+}
+
+.menu-icon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 10px;
+    color: black; 
+}
+
+.enlace-sonido{
+    font-size: 28px;
+}
+
+.enlace-dequesetrata{
+    font-size: 18px;
+}
+
+.enlace-atras{
+    font-size: 28px;
+}
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+}
+
+.submenu {
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    background-color: rgba(236, 34, 94, 1);
+    margin-top: 380px;
+    left: 0;
+    width: 150px;
+}
+
+.perfil{
+    margin-top: 40px;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+
+
+
+.submenu li {
+    padding: 10px;
+    width: 60px;
+}
+
+.submenu a {
+    color: black; 
+    text-decoration: none;
+}
+
+.logomilos{
+    margin-top: 0px;
+    margin-left: -1px;
+}
+ 
+.registrarse{
+    margin-left: -200px;
+    margin-top: 40px;
+}
+
+.iniciarsesion{
+    margin-left: -200px;
+    margin-top: 40px;
+}
