@@ -1,6 +1,6 @@
 .mediocirculomilos {
-    margin-left: 30px; 
-    margin-top: -117px;
+    margin-left: 40px; 
+    margin-top: -187px;
 }
 
 
@@ -18,8 +18,10 @@
 }
 
 .dequetrata{
-    width: 36%;
-    margin-left: 700px;
+    width: 40%;
+    margin-left: 283px;
+    top: 50px;
+
 }
 
 .back-button {
@@ -88,8 +90,3 @@
     border-radius: 14px;
 }
 
-.dequesetrata{
-
-    margin-left: 400px;
-    margin-top: -900px;
-}
