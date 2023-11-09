@@ -3,7 +3,7 @@ const mysql = require("mysql2");
 
 // Hay 2 formas de realizar una conexión: Pool y Connection
 // Yo elijo pool porque creo q era mejor en terminos de memoria y control de cache
-const connection = await mysql.createPool({
+const connection = mysql.createPool({
     host: "localhost",
     user: "root",
     password: "rootroot",
@@ -38,7 +38,7 @@ async function QueryIn(string, values) {
 }
  
 async function InsertarUsuario(nombre, contraseña, email) {
-    const consulta = "INSERT INTO datos_user (Nombre_Usuario, Contraseña, Email) VALUES (?, ?, ?)";
+    const consulta = "INSERT INTO datos_user (Nombre_Usuario, Email, Contraseña) VALUES (?, ?, ?)";
     const values = [nombre, contraseña, email];
     try {
         const respuesta = await QueryIn(consulta, values);
@@ -47,7 +47,7 @@ async function InsertarUsuario(nombre, contraseña, email) {
         console.error("Error al insertar usuario:", error);
     }
 }
-async function InsertarHijo(nombreHijo, generoHijo, edadHijo) {
+async function InsertarHijo(nombreHijo, generoHijo, edadHijo, idUsuario) {
     const consulta = "INSERT INTO datos_hijos (Nombre_Hijo, Genero_Hijo, Edad_Hijo) VALUES (?, ?, ?)";
     const values = [nombreHijo, generoHijo, edadHijo, idUsuario];
 
@@ -62,3 +62,10 @@ async function InsertarHijo(nombreHijo, generoHijo, edadHijo) {
 
 
 module.exports = {InsertarHijo, InsertarUsuario};
+
+
+// boton iniciar sesion: nombre usuario y contraseña.
+// boton registrarse: nombre de usuario, email y contraseña.
+//generar perfil nombre de hijo, genero. 
+//que emocion: enojado, miedo, tristeza, aburrimiento.
+ 

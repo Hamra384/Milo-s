@@ -8,7 +8,7 @@ app.get("/represalia", function (req, res){
     let cuerpo = req.body;
 });
 
-app.get('api/InsertarUsuario',async (req, res) => {
+app.get('/InsertarUsuario',async (req, res) => {
     const {Nombre_Usuario, Contraseña, Email}= req.body;
 
     let reg = funcs.InsertarUsuario(req.body.Nombre_Usuario)
@@ -25,7 +25,7 @@ app.get('api/InsertarUsuario',async (req, res) => {
 });
 
 
-app.listen("http://localhost:9000");
+app.listen(8080);
 
 // Comando a poner en la consola de powershell: npm init --y
 //npm i express/ mysql2.

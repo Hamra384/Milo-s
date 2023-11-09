@@ -1,17 +1,19 @@
 {
   "name": "javascript",
   "version": "1.0.0",
+  "description": "",
   "main": "api.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx nodemon api.js"
+    "dev": "npx nodemon api.js",
+    "no": "mal"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^4.18.2",
-    "mysql2": "^3.6.1"
+    "mysql2": "^3.6.3",
+    "nodemon": "^3.0.1"
   }
 }

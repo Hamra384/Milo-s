@@ -1,5 +1,2 @@
-PUT http://localhost:9000/api/InsertarUsuario HTTP/1.1 
-#Content-Type: application/json Accept: application/json
-{
-    "Nombre_Usuario": "papota"
-}
+GET http://localhost:8080/InsertarUsuario HTTP/1.1 
+#Content-Type: application/json Accept: application/jso
