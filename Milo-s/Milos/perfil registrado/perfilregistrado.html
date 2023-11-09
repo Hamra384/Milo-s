@@ -28,26 +28,35 @@
           <h2>Perfil registrado</h2>
           <form>
             <div class="form-group">
-              <label for="nombre">Nombre del hijo 1:</label>
+              
               <div class="input-with-icon">
                 <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\padreehijo.png" alt="Icono de usuario" class="input-icon">
-                <div id="nombre" class="editable" contenteditable="true" required></div>
+                <input id="nombre" class="editable" type="text" placeholder="Escribe el nombre del hijo 1" required>
               </div>
             </div>
             <div class="form-group">
-              <label for="email">Genero:</label>
+             
               <div class="input-with-icon">
                 <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\genero.png" alt="Icono de correo electrónico" class="input-icon">
-                <div id="email" class="editable" contenteditable="true" required></div>
+                <input id="email" class="editable" type="text" placeholder="Escribe el género" required onblur="validarGenero()">
               </div>
+              <div id="errorGenero" style="color: red;"></div>
             </div>
+            
+            
+            
             <div class="form-group">
-              <label for="password">Agregar mas hijos:</label>
-              <div class="input-with-icon">
-                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\agregar.png" alt="Icono de llave" class="input-icon">
-                <div id="password" class="editable" contenteditable="true" required></div>
-              </div>
-            </div>
+              
+  <div class="input-with-icon">
+    <a href="tu_pagina_siguiente.html"> <!-- Reemplaza 'tu_pagina_siguiente.html' con la URL de la página a la que deseas redirigir -->
+      <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\agregar.png" alt="Icono de agregar"  class="agregar">
+      <div class="agrega"
+       id="email" class="editable" type="text" placeholder="Agrega mas hijos " required onblur="validarGenero()">
+</div>
+      
+    </a>
+  </div>
+</div>
             <button type="submit">Listo</button>
           </form>
         </div>
@@ -56,10 +65,30 @@
         </button>
         
         <script>
+  
+  
+  function validarGenero() {
+    const generoInput = document.getElementById('email');
+    const errorGenero = document.getElementById('errorGenero');
+    const genero = generoInput.value.toLowerCase();
+
+    if (genero !== 'masculino' && genero !== 'femenino') {
+      errorGenero.textContent = 'El género debe ser "Masculino" o "Femenino"';
+      generoInput.value = ''; // Limpia el campo
+    } else {
+      errorGenero.textContent = ''; // Limpia el mensaje de error
+    }
+  }
+
+
+
+
             const backButton = document.getElementById('backButton');
             backButton.addEventListener('click', () => {
                 window.location.href ="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html";
             });
+
+            
         </script>
     </div>
 </body>

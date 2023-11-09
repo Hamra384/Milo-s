@@ -58,6 +58,8 @@ body {
     height: 72vh;
     width: 800px;
     max-width: 1000px;
+    cursor: pointer;
+
   }
 
   body {
