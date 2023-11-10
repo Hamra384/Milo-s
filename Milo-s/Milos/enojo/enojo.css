@@ -20,13 +20,13 @@
 }
 
 .arbol{
-    margin-top: -140px;
+    margin-top: -125px;
     margin-left: 20px;
 }
 
 .arbol2{
     margin-left: 115px;
-    margin-top: -135px;
+    margin-top: -140px;
     
 }
 
@@ -38,6 +38,7 @@
 .mediocirculoverde{
     height: 270px;
     margin-left: 500px;
+    margin-top: 10px;
 }
 .button-container{
  margin-left: 400px;

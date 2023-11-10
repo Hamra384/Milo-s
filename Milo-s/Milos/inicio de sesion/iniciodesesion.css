@@ -10,15 +10,15 @@
   width: 95%;
   height: auto;
   margin-bottom: 20px;
-  margin-top: -150px;
-  margin-left: -80px;
+  margin-top: -175px;
+  margin-left: -60px;
 
 }
 
 .mediocirculomilos {
   position: absolute;
   margin-left: 760px;
-  margin-top: 200px;
+  margin-top: 233px;
 }
 
 .logomilos{
@@ -52,7 +52,7 @@ label {
 
 .input-with-icon {
   position: relative;
-  border-bottom: 2px solid #cab1b1;
+  border-bottom: 2px solid #af9a9a;
   margin-bottom: 30px;
 
 }
@@ -71,9 +71,8 @@ label {
 input[type="text"], input[type="email"], input[type="password"] {
   border: 0px solid #ccc;
   margin-left: -110px;
-  padding-top: 30px;
+  padding-top: 19px;
   border-radius: 0px;
-  margin-top: px;
   
 }
 input[type="contraseña"]{
@@ -90,8 +89,8 @@ input[type="contraseña"]{
 }
 
 .input-with-icon input[type="password"] {
-  padding-right: 0px;
-  margin-top: 60px;
+  padding-right: 10px;
+  margin-top: 50px;
 }
 
 .button-container {
@@ -107,19 +106,30 @@ input[type="contraseña"]{
 
 button[type="submit"] {
   background-color: #000000;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 18px;
-    cursor: pointer;
-    margin-top: 180px;
-    width: 150px;
-    height: 50px;
-    font-size: 19px;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 18px;
+  cursor: pointer;
+  margin-top: 170px;
+  width: 150px;
+  height: 50px;
+  font-size: 19px;
 }
 
 .container {
   position: relative;
+}
+
+h2 {
+  color: rgba(255, 36, 102, 0.8);
+  
+
+  font-family: Bakbak One;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0em;
 }
 
 #backButton {
