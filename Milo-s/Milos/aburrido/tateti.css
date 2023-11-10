@@ -50,10 +50,7 @@
     height: 300px;
     border: none;
     grid-gap: 0; /* Eliminar espacio entre las celdas */
-    border-top: none; /* Eliminar borde superior */
-    border-bottom: none; /* Eliminar borde inferior */
-    border-left: none; /* Eliminar borde izquierdo */
-    border-right: none; /* Eliminar borde derecho */
+    
 }
 .cell {
     width: 100px;
@@ -75,7 +72,7 @@
 }
 
 /* Estilo para el relleno rojo */
-.cross::before {
+.cross:before {
     content: "";
     position: absolute;
     top: 0;

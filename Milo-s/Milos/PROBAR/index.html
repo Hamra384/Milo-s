@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dibujo con Lápiz</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img id="lapiz" src="lapiz.png" alt="Lápiz" style="position: absolute; top: 50px; left: 50px; cursor: pointer;">
+    <canvas id="lienzo" width="800" height="600" style="border: 1px solid #000;"></canvas>
+
+    <script>
+        // Obtén el elemento canvas y su contexto
+        var canvas = document.getElementById('lienzo');
+        var ctx = canvas.getContext('2d');
+
+        // Posición inicial del lápiz
+        var lapiz = {
+            x: 50,
+            y: 50,
+            dibujando: false
+        };
+
+        // Posición inicial del ratón en relación con el lápiz
+        var offset = {
+            x: 0,
+            y: 0
+        };
+
+        // Función para dibujar en el canvas
+        function dibujar(event) {
+            if (!lapiz.dibujando) return;
+
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+            ctx.strokeStyle = '#000';
+
+            ctx.lineTo(event.clientX - offset.x, event.clientY - offset.y);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(event.clientX - offset.x, event.clientY - offset.y);
+        }
+
+        // Manejadores de eventos para iniciar y detener el dibujo
+        document.getElementById('lapiz').addEventListener('mousedown', function(event) {
+            lapiz.dibujando = true;
+            offset.x = event.clientX - lapiz.x;
+            offset.y = event.clientY - lapiz.y;
+            ctx.beginPath();
+            ctx.moveTo(lapiz.x, lapiz.y);
+            canvas.addEventListener('mousemove', dibujar);
+        });
+
+        document.addEventListener('mouseup', function() {
+            lapiz.dibujando = false;
+            canvas.removeEventListener('mousemove', dibujar);
+        });
+    </script>
+</body>
+</html>

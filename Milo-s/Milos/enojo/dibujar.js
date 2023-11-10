@@ -52,20 +52,9 @@ toolbar.addEventListener('change', (e) => {
     }
 
     if (e.target.id === 'lineWidth') {
-        lineWidth = e.target.value;
-    }
-});
-
-toolbar.addEventListener('change', (e) => {
-    if (e.target.id === 'stroke') {
-        ctx.strokeStyle = e.target.value;
-    }
-
-    if (e.target.id === 'lineWidth') {
         // Limita el grosor de la línea a un máximo de 100
         lineWidth = Math.min(e.target.value, 100);
         // Actualiza el valor en el input para reflejar el límite
         e.target.value = lineWidth;
     }
 });
-
