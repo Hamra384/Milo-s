@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Find the Hidden Object</title>
+</head>
+<body>
+  
+    <a href=file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html>
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png"alt="flechaatras" class="flechaatras">
+    </a>
+    <div class="logomilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
+    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
+    <div class="encontramilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\encontramilos.png" alt="Rectángulo" class="encontramilos"></div>
+    <div class="iglo"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iglo.png" alt="Rectángulo" class="iglo"></div>
+    <div class="medioarbol"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\medioarbol.png"alt="Rectángulo" class="medioa"></div>
+    <div class="tresarbol"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\tresarbol.png"alt="Rectángulo" class="tresarbol"></div>
+    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\milos.png" id="imagenRandom" class="milos">
+
+    <script>
+        // Función para mostrar la imagen específica en una posición específica
+        function mostrarImagenEnPosicionEspecifica(posicionX, posicionY) {
+            // Obtener la imagen específica oculta
+            var imagen = document.getElementById('imagenRandom');
+
+            // Mostrar la imagen en la posición específica
+            imagen.classList.remove('hidden');
+            imagen.style.position = 'absolute';
+            imagen.style.left =posicionX + 'px';
+            imagen.style.top = posicionY + 'px';
+        }
+
+        // Llamar a la función con las coordenadas deseadas
+        window.onload = function() {
+            mostrarImagenEnPosicionEspecifica(790, 105); // Cambia las coordenadas según tus preferencias
+        };
+    </script>
+</body>
+</html>
