@@ -4,22 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Estilo para hacer la imagen movible */
+        #red {
+            position: absolute;
+            cursor: grab;
+            top: 100px; /* Ajusta la posición inicial en relación con la parte superior */
+        }
+    </style>
     <title>Find the Hidden Object</title>
 </head>
 <body>
-  
-    <a href=file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html>
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png"alt="flechaatras" class="flechaatras">
+    <a href="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png" alt="flechaatras" class="flechaatras">
     </a>
-    <div class="logomilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
+    <div class="logomilos">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos">
+    </div>
     <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
-    <div class="encontramilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\encontramilos.png" alt="Rectángulo" class="encontramilos"></div>
-    <div class="iglo"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iglo.png" alt="Rectángulo" class="iglo"></div>
-    <div class="medioarbol"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\medioarbol.png"alt="Rectángulo" class="medioa"></div>
-    <div class="tresarbol"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\tresarbol.png"alt="Rectángulo" class="tresarbol"></div>
+    <div class="encontramilos">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\encontramilos.png" alt="Rectángulo" class="encontramilos">
+    </div>
+    <div class="iglo">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iglo.png" alt="Rectángulo" class="iglo">
+    </div>
+    <div class="medioarbol">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\medioarbol.png" alt="Rectángulo" class="medioa">
+    </div>
+    <div class="tresarbol">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\tresarbol.png" alt="Rectángulo" class="tresarbol">
+    </div>
     <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\milos.png" id="imagenRandom" class="milos">
-
+    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\reddepescar.png" alt="Red de Atrapar" class="Red" id="red" draggable="true">
     <script>
+        // Función para mostrar un mensaje de ganaste
+        function ganaste() {
+            alert('¡Ganaste!');
+        }
+
         // Función para mostrar la imagen específica en una posición específica
         function mostrarImagenEnPosicionEspecifica(posicionX, posicionY) {
             // Obtener la imagen específica oculta
@@ -28,14 +51,69 @@
             // Mostrar la imagen en la posición específica
             imagen.classList.remove('hidden');
             imagen.style.position = 'absolute';
-            imagen.style.left =posicionX + 'px';
+            imagen.style.left = posicionX + 'px';
             imagen.style.top = posicionY + 'px';
         }
 
+        // Función para atrapar a Milos con la red
+        function atraparMilos() {
+            // Obtener las posiciones de la red y de Milos
+            var red = document.getElementById('red');
+            var milos = document.getElementById('imagenRandom');
+
+            // Comprobar si la red ha atrapado a Milos
+            if (
+                red.offsetTop < milos.offsetTop + milos.height &&
+                red.offsetTop + red.height > milos.offsetTop &&
+                red.offsetLeft < milos.offsetLeft + milos.width &&
+                red.offsetLeft + red.width > milos.offsetLeft
+            ) {
+                ganaste(); // Llama a la función de ganaste si la red atrapa a Milos
+            }
+        }
+
         // Llamar a la función con las coordenadas deseadas
-        window.onload = function() {
+        window.onload = function () {
             mostrarImagenEnPosicionEspecifica(790, 105); // Cambia las coordenadas según tus preferencias
         };
+
+        // Evento de arrastre para la red
+        var red = document.getElementById('red');
+        red.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData('text', 'red');
+        });
+
+        // Evento de soltar para atrapar a Milos
+        var milos = document.getElementById('imagenRandom');
+        milos.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
+
+        milos.addEventListener('drop', function (e) {
+            e.preventDefault();
+            atraparMilos();
+        });
+
+        // Eventos de arrastre para la red
+        red.addEventListener('dragstart', function (e) {
+            e.dataTransfer.setData('text', 'red');
+        });
+
+        // Eventos para mover la red por toda la página
+        red.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
+
+        red.addEventListener('drop', function (e) {
+            e.preventDefault();
+            // Obtener las nuevas posiciones de la red
+            let nuevaPosicionX = e.clientX - red.width / 2;
+            let nuevaPosicionY = e.clientY - red.height / 2;
+
+            // Establecer la nueva posición de la red
+            red.style.left = nuevaPosicionX + 'px';
+            red.style.top = nuevaPosicionY + 'px';
+        });
     </script>
 </body>
 </html>
