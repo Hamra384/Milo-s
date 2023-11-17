@@ -32,7 +32,7 @@ background-color: #ee5353; /* Color de fondo del botón */
     }
 
 .arbol {
-    margin-top: -280px;
+    margin-top: -270px;
     margin-left: 1100px;
 }
 
@@ -51,17 +51,18 @@ background-color: #ee5353; /* Color de fondo del botón */
 
 
 .arbol2 {
-    margin-top: -157px;
+    margin-top: -140px;
     margin-left: 50px;
 }
 
 .memotest {
-    margin-left: 500px;
+    margin-left: 520px;
     margin-top: 30px;
 }
 
 table {
     margin-left: 310px; /* Ajusta el margen izquierdo para centrar la tabla */
+    margin-top: 20px;
     
 }
 

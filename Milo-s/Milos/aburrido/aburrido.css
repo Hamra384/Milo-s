@@ -1,7 +1,7 @@
 .logomilos{
     height: 30px;
     margin-left: 40px;
-    margin-top: -20px;
+    margin-top: -35px;
     }
 
 .tateti{
@@ -10,14 +10,10 @@
 }
 
 .Rectangulorosa{
-    width: 1245px;
+    width: 1205px;
 }
 
-.empezar{
-    height: 390px;
-    margin-left:500px;
-    margin-top: 180px;
-}
+
 
 .arbol{
     margin-top: -140px;
@@ -45,4 +41,5 @@
 }
 .button-as-image{
     cursor: pointer;
+    height: 150%;
 }
