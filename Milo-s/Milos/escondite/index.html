@@ -1,118 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-
+    <title>Juego de encontrar al personaje</title>
     <style>
-        /* Estilo para hacer la imagen movible */
-        #red {
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .personaje {
             position: absolute;
-            cursor: grab;
-            top: 100px; /* Ajusta la posición inicial en relación con la parte superior */
+            width: 50px;
+            height: 50px;
+            transition: all 0.1s ease-in-out;
+        }
+
+        #personajeVisible {
+            background-image: url(..//Imagenes/reddepescar.png);
+            background-size: cover;
+            margin-top: 350px;
+            margin-left: 600px;
+        }
+
+        #personajeEscondido {
+            background-image: url(..//Imagenes/milos.png);
+            background-size:cover;
+            opacity: 0.1;
+            width: 50px;
+            height: 50px;
         }
     </style>
-    <title>Find the Hidden Object</title>
 </head>
 <body>
-    <a href="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png" alt="flechaatras" class="flechaatras">
+    <a href="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\pagina principal\index.html" >
+        <div class="flechaatras"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png" alt="Rectángulo" class="logomilos"></div>
     </a>
-    <div class="logomilos">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos">
-    </div>
+    <div class="logomilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
     <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
-    <div class="encontramilos">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\encontramilos.png" alt="Rectángulo" class="encontramilos">
+    <div class="encontramilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\encontramilos.png" alt="Rectángulo" class="encontramilos"></div>
+    <div class="iglo"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iglo.png" alt="Rectángulo" class="iglo"></div>
+    <div class="contenedor-imagenes">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\medioarbol.png" alt="Imagen 1">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\tresarbol.png" alt="Imagen 2" class="tresarbol">
     </div>
-    <div class="iglo">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iglo.png" alt="Rectángulo" class="iglo">
+    <div id="escenario">
+        <div id="personajeVisible" class="personaje"></div>
+        <div id="personajeEscondido" class="personaje"></div>
     </div>
-    <div class="medioarbol">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\medioarbol.png" alt="Rectángulo" class="medioa">
-    </div>
-    <div class="tresarbol">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\tresarbol.png" alt="Rectángulo" class="tresarbol">
-    </div>
-    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\milos.png" id="imagenRandom" class="milos">
-    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\reddepescar.png" alt="Red de Atrapar" class="Red" id="red" draggable="true">
+
     <script>
-        // Función para mostrar un mensaje de ganaste
-        function ganaste() {
-            alert('¡Ganaste!');
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            const escenario = document.getElementById("escenario");
+            const personajeVisible = document.getElementById("personajeVisible");
+            const personajeEscondido = document.getElementById("personajeEscondido");
 
-        // Función para mostrar la imagen específica en una posición específica
-        function mostrarImagenEnPosicionEspecifica(posicionX, posicionY) {
-            // Obtener la imagen específica oculta
-            var imagen = document.getElementById('imagenRandom');
-
-            // Mostrar la imagen en la posición específica
-            imagen.classList.remove('hidden');
-            imagen.style.position = 'absolute';
-            imagen.style.left = posicionX + 'px';
-            imagen.style.top = posicionY + 'px';
-        }
-
-        // Función para atrapar a Milos con la red
-        function atraparMilos() {
-            // Obtener las posiciones de la red y de Milos
-            var red = document.getElementById('red');
-            var milos = document.getElementById('imagenRandom');
-
-            // Comprobar si la red ha atrapado a Milos
-            if (
-                red.offsetTop < milos.offsetTop + milos.height &&
-                red.offsetTop + red.height > milos.offsetTop &&
-                red.offsetLeft < milos.offsetLeft + milos.width &&
-                red.offsetLeft + red.width > milos.offsetLeft
-            ) {
-                ganaste(); // Llama a la función de ganaste si la red atrapa a Milos
+            // Posición aleatoria del personaje escondido en toda la página
+            function posicionarPersonajeEscondido() {
+                const rectVisible = personajeVisible.getBoundingClientRect();
+                const randomTop = Math.random() * (window.innerHeight - rectVisible.height);
+                const randomLeft = Math.random() * (window.innerWidth - rectVisible.width);
+                
+                personajeEscondido.style.top = randomTop + "px";
+                personajeEscondido.style.left = randomLeft + "px";
             }
-        }
 
-        // Llamar a la función con las coordenadas deseadas
-        window.onload = function () {
-            mostrarImagenEnPosicionEspecifica(790, 105); // Cambia las coordenadas según tus preferencias
-        };
+            // Posición inicial del personaje visible
+            let posicionActual = { top: 0, left: 0 };
 
-        // Evento de arrastre para la red
-        var red = document.getElementById('red');
-        red.addEventListener('dragstart', function (e) {
-            e.dataTransfer.setData('text', 'red');
-        });
+            // Mueve el personaje a una nueva posición
+            function moverPersonaje() {
+                personajeVisible.style.top = posicionActual.top + "px";
+                personajeVisible.style.left = posicionActual.left + "px";
+            }
 
-        // Evento de soltar para atrapar a Milos
-        var milos = document.getElementById('imagenRandom');
-        milos.addEventListener('dragover', function (e) {
-            e.preventDefault();
-        });
+            // Muestra el personaje escondido y reinicia la posición actual
+            function reiniciarJuego() {
+                posicionActual = { top: 0, left: 0 };
+                moverPersonaje();
+                posicionarPersonajeEscondido();
+            }
 
-        milos.addEventListener('drop', function (e) {
-            e.preventDefault();
-            atraparMilos();
-        });
+            // Verifica si el personaje visible ha encontrado al personaje escondido
+            function verificarEncuentro() {
+                const rectVisible = personajeVisible.getBoundingClientRect();
+                const rectEscondido = personajeEscondido.getBoundingClientRect();
 
-        // Eventos de arrastre para la red
-        red.addEventListener('dragstart', function (e) {
-            e.dataTransfer.setData('text', 'red');
-        });
+                if (
+                    rectVisible.top <= rectEscondido.bottom &&
+                    rectVisible.bottom >= rectEscondido.top &&
+                    rectVisible.left <= rectEscondido.right &&
+                    rectVisible.right >= rectEscondido.left
+                ) {
+                    alert("¡Encontraste al personaje!");
+                    reiniciarJuego();
+                }
+            }
 
-        // Eventos para mover la red por toda la página
-        red.addEventListener('dragover', function (e) {
-            e.preventDefault();
-        });
+            // Maneja las teclas para mover al personaje visible
+            document.addEventListener("keydown", function (event) {
+                switch (event.key) {
+                    case "ArrowDown":
+                        posicionActual.top = Math.min(posicionActual.top + 10, 170);
+                        break;
+                    case "ArrowUp":
+                        posicionActual.top = Math.min(posicionActual.top - 10, window.innerHeight - personajeVisible.clientHeight);
+                        break;
+                    case "ArrowRight":
+                        posicionActual.left = Math.min(posicionActual.left + 10, 620);
+                        break;
+                    case "ArrowLeft":
+                        posicionActual.left = Math.min(posicionActual.left - 10, window.innerWidth - personajeVisible.clientWidth);
+                        break;
+                }
 
-        red.addEventListener('drop', function (e) {
-            e.preventDefault();
-            // Obtener las nuevas posiciones de la red
-            let nuevaPosicionX = e.clientX - red.width / 2;
-            let nuevaPosicionY = e.clientY - red.height / 2;
+                moverPersonaje();
+                verificarEncuentro();
+            });
 
-            // Establecer la nueva posición de la red
-            red.style.left = nuevaPosicionX + 'px';
-            red.style.top = nuevaPosicionY + 'px';
+            // Inicia el juego
+            reiniciarJuego();
         });
     </script>
 </body>
