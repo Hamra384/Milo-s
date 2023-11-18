@@ -94,8 +94,25 @@
                     rectVisible.left <= rectEscondido.right &&
                     rectVisible.right >= rectEscondido.left
                 ) {
-                    alert("¡Encontraste al personaje!");
-                    reiniciarJuego();
+                    const mensajeEncontrado = document.createElement("div");
+        mensajeEncontrado.textContent = "¡Encontraste a Milos!";
+        mensajeEncontrado.style.position = "absolute";
+        mensajeEncontrado.style.top = "45%";
+        mensajeEncontrado.style.left = "50%";
+        mensajeEncontrado.style.transform = "translate(-50%, -50%)";
+        mensajeEncontrado.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+        mensajeEncontrado.style.padding = "20px";
+        mensajeEncontrado.style.borderRadius = "10px";
+        mensajeEncontrado.style.fontSize="50px";
+
+        // Agrega el mensaje al cuerpo del documento
+        document.body.appendChild(mensajeEncontrado);
+
+        // Espera un tiempo y luego reinicia el juego y elimina el mensaje
+        setTimeout(function () {
+            reiniciarJuego();
+            document.body.removeChild(mensajeEncontrado);
+        }, 2000); 
                 }
             }
 
