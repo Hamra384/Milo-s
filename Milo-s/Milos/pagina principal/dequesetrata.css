@@ -36,57 +36,68 @@
     font-weight: bold;
 }
 
-/* Estilos para el menú desplegable */
-.menu {
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f8fa; /* Cambia el color de fondo según tus preferencias */
+}
+
+.container {
     position: relative;
-    background-color: white; 
-    color: black;
-    display: flex;
-    align-items: center;
+}
+
+.toggle-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
     padding: 10px;
-    width: 3%; 
-    float: left; /* Coloca el menú a la izquierda */
-}
-
-.menu-icon {
-    display: flex;
-    flex-direction: column;
+    font-size: 18px;
     cursor: pointer;
-    margin-right: 10px;
-    color: black; 
+    background-color: transparent;
+    color: #24292e; /* Color característico de GitHub */
+    border: none;
+    border-radius: 3px;
+    transition: color 0.3s;
 }
 
-.bar {
-    width: 30px;
-    height: 3px;
-    background-color: black; /* Cambiar el color de las barras a negro */
-    margin: 3px 0;
+.toggle-btn:hover {
+    color: #0366d6; /* Cambia el color al pasar el mouse */
 }
 
-.submenu {
+.menu {
     display: none;
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #e1e4e8;
+    border-radius: 3px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Asegura que el menú esté sobre otros elementos */
+}
+
+.menu ul {
     list-style: none;
     padding: 0;
-    position: absolute;
-    background-color: rgba(140, 133, 135, 0.7);
-    ; /* Cambiar el color de fondo del submenú a blanco */
-    margin-top: 260px;
-    left: 0;
-    width: 150px;
+    margin: 0;
 }
 
-.menu:hover .submenu {
-    display: block;
+.menu li {
+    margin-bottom: 15px;
 }
 
-.submenu li {
-    padding: 27px;
-}
-
-.submenu a {
-    color: black; /* Cambiar el color del texto del submenú a negro */
+.menu a {
     text-decoration: none;
-    border: 14px solid rgb(206, 190, 190);
-    border-radius: 14px;
+    color: #0366d6; /* Color característico de GitHub */
+    font-size: 26px;
+    display: block;
+    transition: color 0.3s;
 }
+
+.menu a:hover {
+    color: #032f62; /* Cambia el color al pasar el mouse */
+}
+
 

@@ -1,31 +1,3 @@
-.registrarse {
-    position: absolute;
-    top: 300px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-}
-
-
-.iniciarsesion {
-    position: absolute;
-    top: 220px; 
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-
-.mediocirculomilos {
-    margin-left: 750px; 
-    margin-top: 100px;
-}   
-
-
-.Rectangulorosa {
-    text-align: center;
-    padding: 100px 0; 
-    width: 95%;
-    margin-top: -100px;
-}
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Montserrat+Alternates|Poppins&display=swap');
 	*{
 		margin: 0;
@@ -33,13 +5,16 @@
 		box-sizing: border-box;
 		font-family: 'Montserrat Alternates', sans-serif;
 	}
-
-	
+	body{
+		background: url(https://www.xtrafondos.com/wallpapers/montanas-con-nieve-en-el-bosque-3934.jpg);
+		background-size: 100vw 100vh;
+		background-repeat: no-repeat;
+	}
 	.capa{
 		position: fixed;
 		width: 100%;
 		height: 100vh;
-		background: rgba(255, 255, 255, 0.6);
+		background: rgba(0,0,0,0.6);
 		z-index: -1;
 		top: 0;left: 0;
 	}
@@ -51,34 +26,35 @@
 		top: 0;left: 0;
 	}
 	.container{
-		width: 390%;
+		width: 90%;
 		max-width: 1200px;
 		margin: auto;
-        margin-top: -30px;
-        margin-left: 5px;
 	}
 	.container .btn-menu, .logo{
 		float: left;
 		line-height:100px;
 	}
 	.container .btn-menu label{
-		color:black;
-		font-size: 35px;
+		color: #fff;
+		font-size: 25px;
 		cursor: pointer;
 	}
-
+	.logo h1{
+		color: #fff;
+		font-weight: 400;
+		font-size: 22px;
+		margin-left: 10px;
+	}
 	.container .menu{
 		float: right;
 		line-height: 100px;
-        margin-top: 50px;
-        background-color: #8c0707;
 	}
 	.container .menu a{
 		display: inline-block;
 		padding: 15px;
 		line-height: normal;
 		text-decoration: none;
-		color: #542424;
+		color: #fff;
 		transition: all 0.3s ease;
 		border-bottom: 2px solid transparent;
 		font-size: 15px;
@@ -93,7 +69,6 @@
 	/*Menù lateral*/
 	#btn-menu{
 		display: none;
-        margin-top: -40px;
 	}
 	.container-menu{
 		position: absolute;
@@ -112,8 +87,7 @@
 	.cont-menu{
 		width: 100%;
 		max-width: 250px;
-		background: rgba(140, 133, 135, 0.7);
-
+		background: #1c1c1c;
 		height: 100vh;
 		position: relative;
 		transition: all 500ms ease;
@@ -121,12 +95,7 @@
 	}
 	#btn-menu:checked ~ .container-menu .cont-menu{
 		transform: translateX(0%);
-        margin-top: 10px;
 	}
-
-    nav a:last-child {
-        margin-top: 240px; /* Esto separará el último enlace del resto y lo colocará al final */
-    }
 	.cont-menu nav{
 		transform: translateY(15%);
 	}
@@ -134,7 +103,7 @@
 		display: block;
 		text-decoration: none;
 		padding: 20px;
-		color: #ffffff;
+		color: #c7c7c7;
 		border-left: 5px solid transparent;
 		transition: all 400ms ease;
 	}
@@ -151,30 +120,3 @@
 		font-size: 18px;
 	}
 	/*Fin de Menù lateral*/
-
-.logomilos{
-   margin-top: -60px;
-    width: 10%;
-    margin-left: -5px;
-}
-
-.bienvenidos{
-  margin-top: -100px;
-  margin-left: 350px;
-}
-
-
-.logomilos{
-    margin-top: 0px;
-    margin-left: 70px;
-}
- 
-.registrarse{
-    margin-left: -200px;
-    margin-top: 40px;
-}
-
-.iniciarsesion{
-    margin-left: -200px;
-    margin-top: 40px;
-}
