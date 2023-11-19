@@ -13,7 +13,7 @@
 
 .logomilos{
     width: 10%;
-    margin-left: 0px;
+    margin-left: 80px;
     margin-top: 0px;
 }
 
@@ -49,8 +49,8 @@ body {
 
 .toggle-btn {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 120px;
+    left: 10px;
     padding: 10px;
     font-size: 18px;
     cursor: pointer;
@@ -68,7 +68,7 @@ body {
 .menu {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 160px;
     left: 20px;
     background-color: #fff;
     padding: 10px;
@@ -77,27 +77,123 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     z-index: 1; /* Asegura que el menú esté sobre otros elementos */
 }
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.capa{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.6);
+    z-index: -1;
+    top: 0;left: 0;
+}
+/*Estilos para el encabezado*/
+.header{
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    top: 0;left: 0;
+}
+.container{
+    width: 390%;
+    max-width: 1200px;
+    margin: auto;
+    margin-top: -25px;
+    margin-left: 5px;
+}
+.container .btn-menu, .logo{
+    float: left;
+    line-height:100px;
+}
+.container .btn-menu label{
+    color:black;
+    font-size: 35px;
+    cursor: pointer;
 }
 
-.menu li {
-    margin-bottom: 15px;
+.container .menu{
+    float: right;
+    line-height: 100px;
+    margin-top: 50px;
+    background-color: #8c0707;
 }
-
-.menu a {
+.container .menu a{
+    display: inline-block;
+    padding: 15px;
+    line-height: normal;
     text-decoration: none;
-    color: #0366d6; /* Color característico de GitHub */
-    font-size: 26px;
-    display: block;
-    transition: color 0.3s;
+    color: #542424;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    font-size: 15px;
+    margin-right: 5px;
+}
+.container .menu a:hover{
+    border-bottom: 2px solid #c7c7c7;
+    padding-bottom: 5px;
+}
+/*Fin de Estilos para el encabezado*/
+
+/*Menù lateral*/
+#btn-menu{
+    display: none;
+    margin-top: -40px;
+}
+.container-menu{
+    position: absolute;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100vh;
+    top: 0;left: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+}
+#btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.cont-menu{
+    width: 100%;
+    max-width: 250px;
+    background: rgba(140, 133, 135, 0.7);
+
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(-100%);
+}
+#btn-menu:checked ~ .container-menu .cont-menu{
+    transform: translateX(0%);
+    margin-top: 10px;
 }
 
-.menu a:hover {
-    color: #032f62; /* Cambia el color al pasar el mouse */
+nav a:last-child {
+    margin-top: 240px; /* Esto separará el último enlace del resto y lo colocará al final */
 }
+.cont-menu nav{
+    transform: translateY(15%);
+}
+.cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #ffffff;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+.cont-menu nav a:hover{
+    border-left: 5px solid #c7c7c7;
+    background: #1f1f1f;
+}
+.cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+/*Fin de Menù lateral*/
+
+
 
 
