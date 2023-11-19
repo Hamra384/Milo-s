@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Juego de encontrar al personaje</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .personaje {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            transition: all 0.1s ease-in-out;
+        }
+
+        #personajeVisible {
+            background-image: url(..//Imagenes/reddepescar.png);
+            background-size: cover;
+            margin-top: 350px;
+            margin-left: 600px;
+        }
+
+        #personajeEscondido {
+            background-image: url(..//Imagenes/milos.png);
+            background-size:cover;
+            opacity: 0.1;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <a href="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\pagina principal\index.html" >
+        <div class="flechaatras"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\flechaatras.png" alt="Rectángulo" class="logomilos"></div>
+    </a>
+    <div class="logomilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos"></div>
+    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
+    <div class="encontramilos"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\encontramilos.png" alt="Rectángulo" class="encontramilos"></div>
+    <div class="iglo"><img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iglo.png" alt="Rectángulo" class="iglo"></div>
+    <div class="contenedor-imagenes">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\medioarbol.png" alt="Imagen 1">
+        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\tresarbol.png" alt="Imagen 2" class="tresarbol">
+    </div>
+    <div id="escenario">
+        <div id="personajeVisible" class="personaje"></div>
+        <div id="personajeEscondido" class="personaje"></div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const escenario = document.getElementById("escenario");
+            const personajeVisible = document.getElementById("personajeVisible");
+            const personajeEscondido = document.getElementById("personajeEscondido");
+
+            // Posición aleatoria del personaje escondido en toda la página
+            function posicionarPersonajeEscondido() {
+                const rectVisible = personajeVisible.getBoundingClientRect();
+                const randomTop = Math.random() * (window.innerHeight - rectVisible.height);
+                const randomLeft = Math.random() * (window.innerWidth - rectVisible.width);
+                
+                personajeEscondido.style.top = randomTop + "px";
+                personajeEscondido.style.left = randomLeft + "px";
+            }
+
+            // Posición inicial del personaje visible
+            let posicionActual = { top: 0, left: 0 };
+
+            // Mueve el personaje a una nueva posición
+            function moverPersonaje() {
+                personajeVisible.style.top = posicionActual.top + "px";
+                personajeVisible.style.left = posicionActual.left + "px";
+            }
+
+            // Muestra el personaje escondido y reinicia la posición actual
+            function reiniciarJuego() {
+                posicionActual = { top: 0, left: 0 };
+                moverPersonaje();
+                posicionarPersonajeEscondido();
+            }
+
+            // Verifica si el personaje visible ha encontrado al personaje escondido
+            function verificarEncuentro() {
+                const rectVisible = personajeVisible.getBoundingClientRect();
+                const rectEscondido = personajeEscondido.getBoundingClientRect();
+
+                if (
+                    rectVisible.top <= rectEscondido.bottom &&
+                    rectVisible.bottom >= rectEscondido.top &&
+                    rectVisible.left <= rectEscondido.right &&
+                    rectVisible.right >= rectEscondido.left
+                ) {
+                    const mensajeEncontrado = document.createElement("div");
+        mensajeEncontrado.textContent = "¡Encontraste a Milos!";
+        mensajeEncontrado.style.position = "absolute";
+        mensajeEncontrado.style.top = "45%";
+        mensajeEncontrado.style.left = "50%";
+        mensajeEncontrado.style.transform = "translate(-50%, -50%)";
+        mensajeEncontrado.style.backgroundColor = "rgba(255, 255, 255, 0.7)";
+        mensajeEncontrado.style.padding = "20px";
+        mensajeEncontrado.style.borderRadius = "10px";
+        mensajeEncontrado.style.fontSize="50px";
+
+        // Agrega el mensaje al cuerpo del documento
+        document.body.appendChild(mensajeEncontrado);
+
+        // Espera un tiempo y luego reinicia el juego y elimina el mensaje
+        setTimeout(function () {
+            reiniciarJuego();
+            document.body.removeChild(mensajeEncontrado);
+        }, 2000); 
+                }
+            }
+
+            // Maneja las teclas para mover al personaje visible
+            document.addEventListener("keydown", function (event) {
+                switch (event.key) {
+                    case "ArrowDown":
+                        posicionActual.top = Math.min(posicionActual.top + 10, 170);
+                        break;
+                    case "ArrowUp":
+                        posicionActual.top = Math.min(posicionActual.top - 10, window.innerHeight - personajeVisible.clientHeight);
+                        break;
+                    case "ArrowRight":
+                        posicionActual.left = Math.min(posicionActual.left + 10, 620);
+                        break;
+                    case "ArrowLeft":
+                        posicionActual.left = Math.min(posicionActual.left - 10, window.innerWidth - personajeVisible.clientWidth);
+                        break;
+                }
+
+                moverPersonaje();
+                verificarEncuentro();
+            });
+
+            // Inicia el juego
+            reiniciarJuego();
+        });
+    </script>
+</body>
+</html>
