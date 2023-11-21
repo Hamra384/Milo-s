@@ -92,27 +92,15 @@
                 cells[cellIndex].appendChild(img);
 
                 if (checkWin()) {
-                    message.textContent = `¡Jugador ${currentPlayer} gana!`;
+                   
 
-                    // Muestra la línea de victoria y atraviesa las tres casillas ganadoras
-                    const victoryLine = document.getElementById('victory-line');
-                    const winningCombination = getWinningCombination();
-                    if (winningCombination) {
-                        const [a, b, c] = winningCombination;
-                        const [left, top, width, height] = getLinePosition(a, b, c);
-                        victoryLine.style.left = `${left}px`;
-                        victoryLine.style.top = `${top}px`;
-                        victoryLine.style.width = `${width}px`;
-                        victoryLine.style.height = `${height}px`;
-                        victoryLine.style.opacity = 1;
-                    }
-
+                    
                     gameActive = false;
                 } else if (boardState.indexOf('') === -1) {
                     message.textContent = '¡Empate!';
                 } else {
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                    message.textContent = `Turno del jugador ${currentPlayer}`;
+                   
                 }
             }
         }

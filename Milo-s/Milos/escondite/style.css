@@ -1,0 +1,72 @@
+.logomilos{
+    height: 30px;
+    margin-left: 40px;
+    margin-top: -20px;
+    }
+
+.tateti{
+    margin-left: 245px;
+    margin-top: 25px;
+}
+
+.Rectangulorosa{
+    width: 1245px;
+    margin-top: -100px;
+}
+
+.empezar{
+    height: 80px;
+    margin-left:500px;
+    margin-top: 180px;
+}
+
+.arbol{
+    margin-top: -130px;
+    margin-left: 20px;
+}
+
+.arbol2{
+    margin-left: 115px;
+    margin-top: -135px;
+    
+}
+
+.ajugar{
+    margin-left: 470px;
+    margin-top: -140px;
+}
+.contenedor-imagenes {
+    display: flex; /* Utilizamos flexbox para colocar las imágenes en la misma línea */
+  }
+
+  .contenedor-imagenes img {
+    margin-right: 300px; /* Puedes ajustar el margen según tus preferencias */
+    margin-top: 50px;
+  }
+.iglo{
+    margin-left: 450px;
+    margin-top: 5px;
+    width: 180px;
+}
+
+.flechaatras {
+    margin-top: 30px;
+    margin-left: -30px;
+}
+.medioarbol{
+    margin-top: -30px;
+}
+.contenedor-imagenes{
+    margin-top: 5px;
+}
+
+.button-container{
+ margin-left: 400px;
+ margin-top: 100px;
+}
+
+.encontramilos{
+    margin-top: 10px;
+    margin-left: 150px;
+}
+

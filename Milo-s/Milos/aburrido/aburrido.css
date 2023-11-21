@@ -16,7 +16,7 @@
 
 
 .arbol{
-    margin-top: -140px;
+    margin-top: -145px;
     margin-left: 20px;
 }
 
@@ -34,6 +34,8 @@
 .mediocirculoverde{
     height: 270px;
     margin-left: 500px;
+    margin-top: 10px;
+    
 }
 .button-container{
  margin-left: 400px;

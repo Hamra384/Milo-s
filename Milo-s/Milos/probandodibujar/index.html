@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <div class="flechaatras">
+        <a href="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html">
+            <img src="..//Imagenes/flechaatras.png" alt="flechaatras">
+        </a>
+        <div class="logomilos">
+            <img src="..//Imagenes/logomilos.png" alt="Rectángulo" class="logomilos">
+        </div>
+        <div class="Rectangulorosa">
+            <img src="..//Imagenes/Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
+        </div>
+        <div class="adibujar">
+            <img src="..//Imagenes/adibujar.png" alt="Rectángulo" class="adibujar">
+        </div>
+        <section class="container">
+            <canvas id="lienzo" width="800" height="400" style="border: 1px solid #000;"></canvas>
+            <div class="arbol">
+                <img src="..//Imagenes/arbol.png" alt="Rectángulo" class="arbol">
+            </div>
+            <div class="arbol2">
+                <img src="..//Imagenes/arbol.png" alt="Rectángulo" class="arbol2">
+            </div>
+        </section>
+        <div class="termine" onclick="capturarPantalla()">
+            <img src="..//Imagenes/termine.png" alt="flechaatras">
+        </div>
+
+        <script>
+            var canvas = document.getElementById('lienzo');
+            var ctx = canvas.getContext('2d');
+            var lapiz = {
+                x: 0,
+                y: 0,
+                dibujando: false
+            };
+
+            function dibujar(event) {
+                if (!lapiz.dibujando) return;
+
+                ctx.lineWidth = 2;
+                ctx.lineCap = 'round';
+                ctx.strokeStyle = '#000';
+
+                ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+            }
+
+            canvas.addEventListener('mousedown', function (event) {
+                lapiz.dibujando = true;
+                ctx.beginPath();
+                ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+                canvas.addEventListener('mousemove', dibujar);
+            });
+
+            document.addEventListener('mouseup', function () {
+                lapiz.dibujando = false;
+                canvas.removeEventListener('mousemove', dibujar);
+            });
+
+            function capturarPantalla() {
+                html2canvas(document.getElementById('lienzo')).then(function (canvas) {
+                    var imgData = canvas.toDataURL('image/png');
+                    var link = document.createElement('a');
+                    link.href = imgData;
+                    link.download = 'captura.png';
+                    link.click();
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                });
+            }
+        </script>
+    </body>
+
+</html>
