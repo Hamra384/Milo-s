@@ -17,68 +17,75 @@
     </style>
     <title>Registro</title>
 </head>
-<div>
-  <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos">
-</div>
 <body>
     <div class="container">
-        <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Imagen de inicio de sesión" class="Rectangulorosa">
-        <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Group 2.png" alt="Imagen de inicio de sesión" class="mediocirculomilos">
+        <!-- ... (resto del contenido) ... -->
         <div class="registration-form">
           <h2>Registrarse</h2>
-          <form>
+          <form id="registroForm" method="POST" action="/ruta-de-tu-servidor-de-registro">
             <div class="form-group">
-              
               <div class="input-with-icon">
-                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\personajeusuario.png"alt="Icono de usuario" class="input-icon">
+                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\personajeusuario.png" alt="Icono de usuario" class="input-icon">
                 <input id="nombre" class="editable" type="text" placeholder="Nombre de usuario" required>
               </div>
             </div>
             <div class="form-group">
               <div class="input-with-icon">
                 <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\email.png" alt="Icono de correo electrónico" class="input-icon">
-                <input id="email" class="editable" type="text" placeholder="E-mail" required onblur="validarGenero()">
+                <input id="email" class="editable" type="text" placeholder="E-mail" required>
               </div>
-           
-              <div class="form-group">               
-                <div class="input-with-icon">
-                  <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\contraseña.png" alt="Icono de correo electrónico" class="input-icon">
-                  <input id="email" class="editable" type="text" placeholder="Contraseña" required onblur="validarGenero()">
-                </div>
-            
-
+            </div>
+            <div class="form-group">               
+              <div class="input-with-icon">
+                <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\contraseña.png" alt="Icono de contraseña" class="input-icon">
+                <input id="contraseña" class="editable" type="password" placeholder="Contraseña" required>
+              </div>
+            </div>
             <button type="submit">Registrarse</button>
           </form>
         </div>
+        
         <button id="backButton">
             <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatrás">
         </button>
         
         <script>
-  
-  
-  function validarGenero() {
-    const generoInput = document.getElementById('email');
-    const errorGenero = document.getElementById('errorGenero');
-    const genero = generoInput.value.toLowerCase();
+            document.getElementById('registroForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+                enviarSolicitudRegistro();
+            });
 
-    if (genero !== 'masculino' && genero !== 'femenino') {
-      errorGenero.textContent = 'El género debe ser "Masculino" o "Femenino"';
-      generoInput.value = ''; // Limpia el campo
-    } else {
-      errorGenero.textContent = ''; // Limpia el mensaje de error
-    }
-  }
+            function enviarSolicitudRegistro() {
+                const nombreUsuario = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const contraseña = document.getElementById('contraseña').value;
 
-
-
+                fetch('/ruta-de-tu-servidor-de-registro', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        nombreUsuario: nombreUsuario,
+                        email: email,
+                        contraseña: contraseña,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Maneja la respuesta del servidor
+                    console.log(data);
+                    // Puedes redirigir al usuario a otra página después del registro si es necesario
+                })
+                .catch(error => {
+                    console.error('Error al enviar la solicitud:', error);
+                });
+            }
 
             const backButton = document.getElementById('backButton');
             backButton.addEventListener('click', () => {
                 window.location.href ="file:///C:/Users/47699199/Desktop/Milos/pagina%20principal/index.html";
             });
-
-            
         </script>
     </div>
 </body>

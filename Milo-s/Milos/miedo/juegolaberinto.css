@@ -20,16 +20,8 @@
   margin-top: -250px;
 }
 
-.arbolcollapse{
-  margin-top: 260px;
-  position: static;
-  
-}
 
-.arbol2collapse{
-  position: relative;
-  top: 40px;
-}
+
 html,
 body {
   width: 100vw;
