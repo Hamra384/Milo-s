@@ -7,22 +7,18 @@ const funcs = require("./sql.js");
 
 app.get("/represalia", function (req, res){
     let cuerpo = req.body;
-});
+}); 
+ 
+app.post('/RegistrarUsuario', async (req, res) => {
+    const { Nombre_Usuario, Contraseña, Email } = req.body;
 
-app.post('/RegistrarUsuario', (req, res) => {
-    const {Nombre_Usuario, Contraseña, Email}= req.body;
-
-    let reg = funcs.RegistrarUsuario(req.body.Nombre_Usuario)
-    .then((resultado) => {
-        console.log(resultado);
-        if (resultado instanceof Error){
-            res.send(400);
-        }
-        else {
-            res.send(200);
-        }
-
-    });
+    try {
+        await funcs.RegistrarUsuario(Nombre_Usuario, Contraseña, Email);
+        res.sendStatus(200);
+    } catch (error) {
+        console.error("Error al registrar usuario:", error);
+        res.status(400).send(error.message || "Bad Request");
+    }
 });
 
 app.post('/RegistrarHijo', (req, res) => {

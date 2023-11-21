@@ -19,7 +19,8 @@ async function SelId(nombre) {
 
 async function QueryIn(string, values) {
     try {
-        const [results] = await connection.execute(string, values);
+        const results = connection.execute(string, values);
+        
         return results;
     } catch (error) {
         throw error;
@@ -27,13 +28,25 @@ async function QueryIn(string, values) {
 }
 
 async function RegistrarUsuario(nombre, contraseña, email) {
-    const consulta = "INSERT INTO datos_user (Nombre_Usuario, Email, Contraseña) VALUES (?, ?, ?)";
-    const values = [nombre, contraseña, email];
+    const saltRounds = 10;
+
     try {
+
+        // Generar un hash de la contraseña
+        const hash = await bcrypt.hash(contraseña, saltRounds);
+
+        // Consulta para insertar el usuario con la contraseña hasheada en la base de datos
+        const consulta = "INSERT INTO datos_user (Nombre_Usuario, Contraseña, Email) VALUES (?, ?, ?)";
+        const values = [nombre, hash, email];
+
+        // Ejecutar la consulta
         const respuesta = await QueryIn(consulta, values);
+
         console.log("Usuario insertado correctamente:", respuesta);
+        return respuesta;
     } catch (error) {
         console.error("Error al insertar usuario:", error);
+        throw error;
     }
 }
 
