@@ -9,7 +9,7 @@ app.get("/represalia", function (req, res){
     let cuerpo = req.body;
 });
 
-app.post('/RegistrarUsuario',async (req, res) => {
+app.post('/RegistrarUsuario', (req, res) => {
     const {Nombre_Usuario, Contraseña, Email}= req.body;
 
     let reg = funcs.RegistrarUsuario(req.body.Nombre_Usuario)
@@ -25,7 +25,7 @@ app.post('/RegistrarUsuario',async (req, res) => {
     });
 });
 
-app.post('/RegistrarHijo',async (req, res) => {
+app.post('/RegistrarHijo', (req, res) => {
     const {nombreHijo, generoHijo, edadHijo, idUsuario}= req.body;
     let reg = funcs.RegistrarHijo(req.body.Nombre_Usuario)
     .then((resultado) => {
@@ -39,11 +39,11 @@ app.post('/RegistrarHijo',async (req, res) => {
 
     });
 });
-app.post('/iniciarSesion', async (req, res) => {
+app.post('/iniciarSesion', (req, res) => {
     const { Nombre_Usuario, Contraseña } = req.body;
 
     try {
-        const resultado = await funcs.iniciarSesion(Nombre_Usuario, Contraseña);
+        const resultado = funcs.iniciarSesion(Nombre_Usuario, Contraseña);
 
         if (resultado.loggedIn) {
             res.status(200).json({ message: resultado.message });
