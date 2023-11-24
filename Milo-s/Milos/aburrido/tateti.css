@@ -5,7 +5,7 @@
     }
 
 .tateti{
-    margin-left: 280px;
+    margin-left: 270px;
     margin-top: 1px;
 }
 
@@ -48,28 +48,11 @@
     margin: 30px auto;
     width: 350px;
     height: 300px;
-    border: none;
+    margin-left: 490px;
+    
+
     grid-gap: 0; /* Eliminar espacio entre las celdas */
     
-    .logomilos{
-        height: 30px;
-        margin-left: 40px;
-        margin-top: -35px;
-        }
-    
-        body{
-            max-height: 90vh;
-            overflow-y: hidden;
-          }
-    
-    .tateti{
-        margin-left: 245px;
-        margin-top: 25px;
-    }
-    
-    .Rectangulorosa{
-        width: 1205px;
-    }
     
 }
 .cell {
@@ -79,7 +62,7 @@
     align-items: center;
     justify-content: center;
     font-size: 104px;
-    border: 2px solid rgb(221, 208, 208);
+    border: 1px solid rgb(211, 189, 189);
     cursor: pointer;
     position: relative; /* Agregamos esta propiedad para posicionar el relleno */
 }
@@ -107,17 +90,11 @@
     width: 90px;
 }
 
-.victory-line {
-    position: absolute;
-    background-color: #00ff00; /* Cambia el color según tus preferencias */
-    opacity: 0; /* Inicialmente ocultamos la línea de victoria */
-    transition: opacity 0.5s ease-in-out; /* Agregamos una transición para la animación */
-    z-index: 1; /* Asegura que la línea de victoria esté sobre las casillas */
-}
+
 
 .reiniciar-button{
 margin-top: 50px;
-   margin-left: 600px;
+   margin-left: 590px;
    background-color: rgb(223, 58, 71);
     color: white; /* Cambiar el color del texto para que sea legible */
     width: 110px;
