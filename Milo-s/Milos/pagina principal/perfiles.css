@@ -37,3 +37,7 @@
 .agregarperfil2{
     margin-left: -100px;
 }
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }

@@ -19,3 +19,8 @@
     margin-left: 90px;
     margin-top: -45px;
 }
+
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }

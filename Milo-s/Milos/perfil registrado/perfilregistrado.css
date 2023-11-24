@@ -79,8 +79,6 @@
     margin-left: -130px;
     border-radius: 0px;
   }
-
-  
   
   .editable {
     border: none; /* Elimina el borde */
@@ -88,6 +86,11 @@
     outline: none;
     display: inline-block;
     padding: 14px; /* Espacio entre el texto y el icono */
+}
+
+body{
+  max-height: 90vh;
+  overflow-y: hidden;
 }
   .agregar{
     margin-left: -370px;

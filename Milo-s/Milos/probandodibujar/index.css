@@ -12,16 +12,20 @@
 }
 
 .adibujar{
-    margin-left: 240px;
+    margin-left: 250px;
 }
 
 .container{
-    margin-left: 210px;
+    margin-left: 250px;
     background-color:rgba(217, 217, 217, 1);
     height: 400px;
     width: 800px; 
 }
 
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }
 .termine{
     margin-left: 430px;
     margin-top: 30px;

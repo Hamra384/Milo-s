@@ -3,6 +3,11 @@
     margin-top: -157px;
 }
 
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }
+
 
 .Rectangulorosa {
     text-align: center;

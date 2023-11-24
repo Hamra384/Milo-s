@@ -1,3 +1,7 @@
+body{
+  max-height: 90vh;
+  overflow-y: hidden;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -19,6 +23,20 @@
   position: absolute;
   margin-left: 760px;
   margin-top: 234px;
+}
+.logomilos{
+  height: 30px;
+  margin-left: 30px;
+  margin-top: -22px;
+  }
+
+.tateti{
+  margin-left: 280px;
+  margin-top: 1px;
+}
+
+.Rectangulorosa{
+  width: 1250px;
 }
 
 .logomilos{

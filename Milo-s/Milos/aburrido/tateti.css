@@ -51,6 +51,26 @@
     border: none;
     grid-gap: 0; /* Eliminar espacio entre las celdas */
     
+    .logomilos{
+        height: 30px;
+        margin-left: 40px;
+        margin-top: -35px;
+        }
+    
+        body{
+            max-height: 90vh;
+            overflow-y: hidden;
+          }
+    
+    .tateti{
+        margin-left: 245px;
+        margin-top: 25px;
+    }
+    
+    .Rectangulorosa{
+        width: 1205px;
+    }
+    
 }
 .cell {
     width: 100px;

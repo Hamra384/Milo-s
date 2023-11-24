@@ -44,9 +44,27 @@ background-color: #ee5353; /* Color de fondo del botón */
     padding: 10px; /* Espaciado interior para mayor legibilidad */
     top: 300px;
     margin-left: 250px;
-    
 }
 
+.logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+}
+
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }
 
 
 

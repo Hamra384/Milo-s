@@ -39,6 +39,21 @@
     display: flex; /* Utilizamos flexbox para colocar las imágenes en la misma línea */
   }
 
+  .logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+}
+
   .contenedor-imagenes img {
     margin-right: 300px; /* Puedes ajustar el margen según tus preferencias */
     margin-top: 50px;
