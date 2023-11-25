@@ -7,6 +7,7 @@
     body{
         max-height: 90vh;
         overflow-y: hidden;
+        overflow-x: hidden;
       }
 
 .tateti{
@@ -16,6 +17,7 @@
 
 .Rectangulorosa{
     width: 1205px;
+    margin-top: -15px;
 }
 
 
@@ -31,9 +33,13 @@
     
 }
 
+.contenedor-imagenes img{
+    margin-top: 220px;
+}
+
 .ajugar{
     margin-left: 470px;
-    margin-top: -140px;
+    margin-top: -170px;
 }
 
 .mediocirculoverde{

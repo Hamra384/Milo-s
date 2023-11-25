@@ -2,7 +2,6 @@ function rand(max) {
     return Math.floor(Math.random() * max);
 }
 
-
 function shuffle(a) {
     for (let i = a.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -34,7 +33,7 @@ function changeBrightness(factor, sprite) {
 }
 
 function displayVictoryMess(moves) {
- 
+    
     toggleVisablity("Message-Container");
 }
 
@@ -553,7 +552,10 @@ window.onresize = function () {
 
 function makeMaze() {
 
-  
+    let claseSb = document.getElementById("arbol")
+	let claseSc = document.getElementById("arbol2")
+	claseSb.classList.toggle("arbolCollapse")
+	claseSc.classList.toggle("arbol2Collapse")
 
     //document.getElementById("mazeCanvas").classList.add("border");
     if (player != undefined) {
@@ -582,12 +584,4 @@ function makeMaze() {
             // En este ejemplo, no se aplica ninguna transformación a las imágenes al hacer clic en el botón "Start".
         });
     });
-    
-        
-    
-   
-	
-    
-    
-
 }

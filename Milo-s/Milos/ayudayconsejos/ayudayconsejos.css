@@ -30,7 +30,7 @@ body{
 .empezar{
     height: 90px;
     margin-left:480px;
-    margin-top: 20px;
+    margin-top: 165px;
     width: 250px;
     cursor: pointer;
     
@@ -49,6 +49,6 @@ body{
 
 .ayudayconsejos{
     width: 650px;
-    margin-left: 150px;
+    margin-left: 160px;
 }
 
