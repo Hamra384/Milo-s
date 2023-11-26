@@ -22,6 +22,26 @@ margin-top: -450px;
     margin-left: 200px;
 }
 
+.agregar{
+    margin-top: -180px;
+    margin-left: 350px;
+}
+.perfil{
+    margin-left: -230px;
+    margin-top: 20px;
+}
+.sofia{
+    margin-left: 290px;
+    margin-top: -270px;
+}
+.juan{
+    margin-left: 200px;
+    margin-top: 50px;
+    padding-right: 40px;
+    padding-left: 50px;
+}
+
+
 .agregarperfil{
     margin-left: 100px;
     position: relative;
