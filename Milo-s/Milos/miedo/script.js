@@ -33,7 +33,7 @@ function changeBrightness(factor, sprite) {
 }
 
 function displayVictoryMess(moves) {
-    document.getElementById("moves").innerHTML = "Hiciste " + moves + " Movimientos.";
+    
     toggleVisablity("Message-Container");
 }
 
@@ -584,12 +584,4 @@ function makeMaze() {
             // En este ejemplo, no se aplica ninguna transformación a las imágenes al hacer clic en el botón "Start".
         });
     });
-    
-        
-    
-   
-	
-    
-    
-
 }
