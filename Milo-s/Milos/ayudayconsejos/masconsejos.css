@@ -20,25 +20,44 @@
     margin-top: 9px;
 }
 
+.logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+}
+
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }
 .arbol{
-    margin-top: -85px;
+    margin-top: -15px;
     margin-left: 55px;
 }
 
 .arbol2{
-    margin-left: 515px;
+    margin-left: 525px;
     margin-top: -135px;
     
 }
 
 .masconsejostexto{
-    width: 700px;
-    margin-left: 80px;
+    width: 740px;
+    margin-left: 50px;
     margin-top: -30px;
 }
 
 .masconsejosrosa{
     width: 300px;
-    margin-left: 240px;
+    margin-left: 260px;
     margin-top: -20px;
 }

@@ -69,6 +69,37 @@
       errorGenero.textContent = ''; // Limpia el mensaje de error
     }
   }
+  document.getElementById('registroForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+                enviarSolicitudRegistro();
+            });
+
+            function enviarSolicitudRegistro() {
+                const nombreUsuario = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const contraseña = document.getElementById('contraseña').value;
+
+                fetch('/RegistrarUsuario', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        nombreUsuario: nombreUsuario,
+                        email: email,
+                        contraseña: contraseña,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Maneja la respuesta del servidor
+                    console.log(data);
+                    // Puedes redirigir al usuario a otra página después del registro si es necesario
+                })
+                .catch(error => {
+                    console.error('Error al enviar la solicitud:', error);
+                });
+            }
 
 
 

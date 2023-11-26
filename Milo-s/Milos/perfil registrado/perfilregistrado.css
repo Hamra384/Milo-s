@@ -10,7 +10,7 @@
     width: 95%;
     height: auto;
     margin-bottom: 20px;
-    margin-top: -150px;
+    margin-top: -290px;
     margin-left: -80px;
   
   }
@@ -18,7 +18,7 @@
   .mediocirculomilos {
     position: absolute;
     margin-left: 760px;
-    margin-top: 200px;
+    margin-top: 349px;
   }
   
   .logomilos{
@@ -79,15 +79,18 @@
     margin-left: -130px;
     border-radius: 0px;
   }
-
-  
   
   .editable {
     border: none; /* Elimina el borde */
     background: none;
     outline: none;
     display: inline-block;
-    padding: 4px; /* Espacio entre el texto y el icono */
+    padding: 14px; /* Espacio entre el texto y el icono */
+}
+
+body{
+  max-height: 90vh;
+  overflow-y: hidden;
 }
   .agregar{
     margin-left: -370px;

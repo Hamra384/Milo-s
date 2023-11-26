@@ -3,20 +3,24 @@
     position: relative;
     top: 50px;
     position: relative;
-    top: 10px; 
+    top: -160px; 
 }
 
 .mediocirculomilos{
     margin-left: 74%;
     position: relative;
-    top: 254px;
+    top: 394px;
 }
 
 .perfileshijos{
-    margin-left: 520px;
-    position: relative;
-    top: -320px;
+align-items: center;
+margin-top: -450px;
 }  
+
+.bienvenidos{
+    margin-top: -240px;
+    margin-left: 200px;
+}
 
 .agregarperfil{
     margin-left: 100px;
@@ -37,3 +41,7 @@
 .agregarperfil2{
     margin-left: -100px;
 }
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }

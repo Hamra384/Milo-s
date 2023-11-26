@@ -1,103 +1,27 @@
-.mediocirculomilos {
-    margin-left: 40px; 
-    margin-top: -187px;
-}
-
-
-.Rectangulorosa {
-    text-align: center;
-    padding: 100px 0; 
-    margin-top: -95px;
-    width: 1280px;
-}
-
 .logomilos{
-    width: 10%;
-    margin-left: 0px;
-    margin-top: 0px;
+    width: 110px;
+    margin-left: 30px;
+    margin-top: -20px;
 }
 
-.dequetrata{
-    width: 40%;
-    margin-left: 283px;
-    top: 50px;
-
+.rectangulorosa{
+    width: 1300px;
+    margin-top: -3px;
 }
 
-.back-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: #ffffff;
-    color: #00aaff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
+.quienessomos{
+    margin-left: 430px;
+    margin-top: 198px;
+    width: 580px;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f6f8fa; /* Cambia el color de fondo según tus preferencias */
+.nosotros{
+    width: 250px;
+    margin-left: 90px;
+    margin-top: -30px;
 }
 
-.container {
-    position: relative;
-}
-
-.toggle-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    padding: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    background-color: transparent;
-    color: #24292e; /* Color característico de GitHub */
-    border: none;
-    border-radius: 3px;
-    transition: color 0.3s;
-}
-
-.toggle-btn:hover {
-    color: #0366d6; /* Cambia el color al pasar el mouse */
-}
-
-.menu {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #e1e4e8;
-    border-radius: 3px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 1; /* Asegura que el menú esté sobre otros elementos */
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.menu li {
-    margin-bottom: 15px;
-}
-
-.menu a {
-    text-decoration: none;
-    color: #0366d6; /* Color característico de GitHub */
-    font-size: 26px;
-    display: block;
-    transition: color 0.3s;
-}
-
-.menu a:hover {
-    color: #032f62; /* Cambia el color al pasar el mouse */
-}
-
-
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }

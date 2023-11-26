@@ -4,6 +4,12 @@
     margin-top: -35px;
     }
 
+    body{
+        max-height: 90vh;
+        overflow-y: hidden;
+        overflow-x: hidden;
+      }
+
 .tateti{
     margin-left: 245px;
     margin-top: 25px;
@@ -11,12 +17,13 @@
 
 .Rectangulorosa{
     width: 1205px;
+    margin-top: -15px;
 }
 
 
 
 .arbol{
-    margin-top: -140px;
+    margin-top: -145px;
     margin-left: 20px;
 }
 
@@ -26,14 +33,20 @@
     
 }
 
+.contenedor-imagenes img{
+    margin-top: 220px;
+}
+
 .ajugar{
     margin-left: 470px;
-    margin-top: -140px;
+    margin-top: -170px;
 }
 
 .mediocirculoverde{
     height: 270px;
     margin-left: 500px;
+    margin-top: 10px;
+    
 }
 .button-container{
  margin-left: 400px;

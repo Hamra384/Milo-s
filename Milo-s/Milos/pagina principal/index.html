@@ -20,10 +20,10 @@
 <div class="container-menu">
 	<div class="cont-menu">
 		<nav>
-			<a href="#">👤¿Quienes somos?</a>
-			<a href="#">🔊Sonido</a>
-			<a href="#">❓​¿De que se trata?</a>
-            <a href="#">🔙Atras</a>
+			<a href="..//quienessomos/quienessomos.html">¿Quienes somos?</a>
+            <a href="#" id="toggle-sound">Sonido</a>
+			<a href="..//pagina principal/dequesetrata.html">​¿De que se trata?</a>
+            <a href="#">Atras</a>
 		</nav>
 		<label for="btn-menu">✖️</label>
 	</div>
@@ -32,21 +32,42 @@
 </div>   
 
 <div class="rectangle-container">
-    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
+    <img src="..//Imagenes/Rectangulorosa.png" alt="Rectángulo" class="Rectangulorosa">
 </div>
 <img src="..//Imagenes/Bienvenidos.png"  class="bienvenidos">
 
 <div class="rectangle-container">
-    <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\mediocirculomilos.png"alt="Rectángulo" class="mediocirculomilos">
+    <img src="..//Imagenes/mediocirculomilos.png"alt="Rectángulo" class="mediocirculomilos">
 </div>
+<audio id="myAudio" controls>
+    <source src="C:\Users\47699199\Downloads\sunrise-groove-176565.mp3" type="audio/mp3">
+    
+</audio>
 
+<script>
+    // Get the audio element
+    var audio = document.getElementById("myAudio");
+
+    // Get the "Sonido" link
+    var soundToggle = document.getElementById("toggle-sound");
+
+    // Add a click event listener to the link
+    soundToggle.addEventListener("click", function() {
+        // Toggle play/pause of the audio
+        if (audio.paused) {
+            audio.play();
+        } else {
+            audio.pause();
+        }
+    });
+</script>
 
 <div classs="button-container">
     <a href=file:///C:/Users/47699199/Desktop/Milo-s/Milo-s/Milos/Registro/registro.html class="registrarse">
         <img src="..//Imagenes/registrarse.png"alt="Registrarse">
     </a>
     <a href="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\inicio de sesion\iniciodesesion.html"class="iniciarsesion">
-        <img src="C:\Users\marti\OneDrive\Documentos\GitHub\Milo-s\Milo-s\Milos\Imagenes\iniciarsesion.png" alt="Iniciar Sesión">
+        <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Group 18.png" alt="Iniciar Sesión">
     </a>
     <script src="index.js"></script>
 <body>

@@ -7,25 +7,21 @@ const funcs = require("./sql.js");
 
 app.get("/represalia", function (req, res){
     let cuerpo = req.body;
+}); 
+ 
+app.post('/RegistrarUsuario', async (req, res) => {
+    const { Nombre_Usuario, Contraseña, Email } = req.body;
+
+    try {
+        await funcs.RegistrarUsuario(Nombre_Usuario, Contraseña, Email);
+        res.sendStatus(200);
+    } catch (error) {
+        console.error("Error al registrar usuario:", error);
+        res.status(400).send(error.message || "Bad Request");
+    }
 });
 
-app.post('/RegistrarUsuario',async (req, res) => {
-    const {Nombre_Usuario, Contraseña, Email}= req.body;
-
-    let reg = funcs.RegistrarUsuario(req.body.Nombre_Usuario)
-    .then((resultado) => {
-        console.log(resultado);
-        if (resultado instanceof Error){
-            res.send(400);
-        }
-        else {
-            res.send(200);
-        }
-
-    });
-});
-
-app.post('/RegistrarHijo',async (req, res) => {
+app.post('/RegistrarHijo', (req, res) => {
     const {nombreHijo, generoHijo, edadHijo, idUsuario}= req.body;
     let reg = funcs.RegistrarHijo(req.body.Nombre_Usuario)
     .then((resultado) => {
@@ -39,11 +35,11 @@ app.post('/RegistrarHijo',async (req, res) => {
 
     });
 });
-app.post('/iniciarSesion', async (req, res) => {
+app.post('/iniciarSesion', (req, res) => {
     const { Nombre_Usuario, Contraseña } = req.body;
 
     try {
-        const resultado = await funcs.iniciarSesion(Nombre_Usuario, Contraseña);
+        const resultado = funcs.iniciarSesion(Nombre_Usuario, Contraseña);
 
         if (resultado.loggedIn) {
             res.status(200).json({ message: resultado.message });
