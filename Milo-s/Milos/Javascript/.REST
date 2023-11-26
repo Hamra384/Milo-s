@@ -1,0 +1,11 @@
+
+POST http://localhost:8080/RegistrarUsuario
+Content-Type: application/json
+
+{
+ "Nombre_Usuario": "jorge",
+ "Contraseña": "12345h",
+    "Email": "jorge@gmail.com"
+} 
+
+//npx nodemon api.js

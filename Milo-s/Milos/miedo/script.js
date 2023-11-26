@@ -584,8 +584,3 @@ function makeMaze() {
             // En este ejemplo, no se aplica ninguna transformación a las imágenes al hacer clic en el botón "Start".
         });
     });
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 4ac858075654dcb0e4d519fae2b3453ae72a4750
