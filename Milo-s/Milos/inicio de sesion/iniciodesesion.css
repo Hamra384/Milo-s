@@ -123,14 +123,14 @@ input[type="contraseña"]{
   transform: translateY(-50%);
 }
 
-button[type="submit"] {
+.inicio{
   background-color: #000000;
   color: white;
   border: none;
   padding: 10px 15px;
-  border-radius: 18px;
+
   cursor: pointer;
-  margin-top: 170px;
+  margin-top: 270px;
   width: 150px;
   height: 50px;
   font-size: 19px;

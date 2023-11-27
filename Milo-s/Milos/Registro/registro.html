@@ -17,16 +17,19 @@
     </style>
     <title>Registro</title>
 </head>
-<div>
-  <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos">
+<div class="flechaatras"></div>
+<a href="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\pagina principal\index.html"> 
+    <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatras">  
+</a>
 </div>
+    <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\logomilos.png" alt="Rectángulo" class="logomilos">
+</div>  
 <body>
     <div class="container">
         <img src="C:\Users\47699199\Desktop\Milos\Rectangulorosa.png" alt="Imagen de inicio de sesión" class="Rectangulorosa">
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Group 2.png" alt="Imagen de inicio de sesión" class="mediocirculomilos">
         <div class="registration-form">
           <h2>Registrarse</h2>
-    
           <form>
             <div class="form-group">
               
@@ -48,29 +51,36 @@
                 </div>
             
 
-            <button type="submit">Registrarse</button>
-          </form>
+                <a href="..//perfil registrado/perfilregistrado.html " onclick="redirigir(); return false;" class="inicio">Registrarse</a>
+              </form>
         </div>
-        <button id="backButton">
-            <img src="C:\Users\47699199\Desktop\Milos\flechaatras.png" alt="flechaatrás">
-        </button>
+        
         
         <script>
   
   
-  document.querySelector('form').addEventListener('submit', function (event) {
-            event.preventDefault(); // Evita que el formulario se envíe automáticamente
-            enviarSolicitudRegistro();
-        });
+  function validarGenero() {
+    const generoInput = document.getElementById('email');
+    const errorGenero = document.getElementById('errorGenero');
+    const genero = generoInput.value.toLowerCase();
 
-        function enviarSolicitudRegistro() {
-            // ... (tu código para enviar la solicitud)
+    if (genero !== 'masculino' && genero !== 'femenino') {
+      errorGenero.textContent = 'El género debe ser "Masculino" o "Femenino"';
+      generoInput.value = ''; // Limpia el campo
+    } else {
+      errorGenero.textContent = ''; // Limpia el mensaje de error
+    }
+  }
+  document.getElementById('registroForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+                enviarSolicitudRegistro();
+            });
 
-            // Después de enviar la solicitud, redirige a otra página
-            window.location.href = "ruta_a_tu_otra_pagina.html";
-        }
+            function enviarSolicitudRegistro() {
+                const nombreUsuario = document.getElementById('nombre').value;
+                const email = document.getElementById('email').value;
+                const contraseña = document.getElementById('contraseña').value;
 
- HEAD
                 fetch('/RegistrarUsuario', {
                     method: 'POST',
                     headers: {
@@ -91,15 +101,18 @@
                 .catch(error => {
                     console.error('Error al enviar la solicitud:', error);
                 });
-            
+            }
 
 
 
 
             const backButton = document.getElementById('backButton');
             backButton.addEventListener('click', () => {
-                window.location.href ="file:///C:/Users/47699199/Desktop/Milo-s/Milo-s/Milos/////pagina%20principal/index.html";
+                window.location.href ="../pagina_principal/index.html";
             });
 
             
-
+        </script>
+    </div>
+</body>
+</html>

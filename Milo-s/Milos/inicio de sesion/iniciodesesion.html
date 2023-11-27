@@ -19,7 +19,7 @@
     <script>
       function redirigir() {
         // Cambia la URL por la que deseas redirigir
-        window.location.href = 'https://www.ejemplo.com';
+        window.location.href = 'C:\\Users\\47699199\\Desktop\\Milo-s\\Milo-s\\Milos\\pagina principal\\perfiles.html';
       }
     </script>
   
@@ -50,9 +50,9 @@
           
             
 
-            <button type="submit" value="enviar" onclick="redirigir()">Iniciar sesion</button>
+              <a href="..//pagina principal/perfiles.html " onclick="redirigir(); return false;" class="inicio">Iniciar sesión</a>
             
-            
+            </div>
           </form>
         </div>
         <button id="backButton">
@@ -60,6 +60,26 @@
         </button>
         
         <script>
+            document.querySelector('form').addEventListener('submit', function (event) {
+                event.preventDefault(); // Evita que el formulario se envíe automáticamente
+                enviarSolicitudRegistro();
+            });
+
+            function enviarSolicitudRegistro() {
+                const nombreUsuario = document.getElementById('nombre').value;
+                const contrasena = document.getElementById('email').value;
+
+                // Verifica si ambos campos están llenos
+                if (nombreUsuario.trim() !== '' && contrasena.trim() !== '') {
+                    // Realiza aquí cualquier validación adicional antes de redirigir
+
+                    // Redirige a la página deseada
+                    window.location.href = "ruta_a_tu_otra_pagina.html";
+                } else {
+                    // Muestra un mensaje de error o realiza otra acción según tus necesidades
+                    alert('Por favor, completa todos los campos antes de iniciar sesión.');
+                }
+            }
            document.querySelector('form').addEventListener('submit', function (event) {
             event.preventDefault(); // Evita que el formulario se envíe automáticamente
             enviarSolicitudRegistro();
