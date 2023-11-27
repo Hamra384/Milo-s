@@ -1,20 +1,11 @@
 .logomilos img{
     width: 10%;
     margin-left: 68px;
-    top: -5px;
+    top: 30px;
     position: relative;
 }
 
-.flechaatras {
-    cursor: pointer;
-    margin-top: -5px;
-   position: absolute   
-}
 
-.Rectangulorosa {
-    width: 1250px;
-    margin-top: -5px;
-}
 
 .reiniciar{
     margin-top: -290px;
@@ -36,22 +27,32 @@ background-color: #ee5353; /* Color de fondo del botón */
     margin-left: 1100px;
 }
 
-/* Estilos para el temporizador */
-#timer {
-    font-size: 24px; /* Tamaño de la fuente */
-    color: #FF0000; /* Color del texto (rojo en este caso) */
-    background-color: #FFFFFF; /* Color de fondo */
-    padding: 10px; /* Espaciado interior para mayor legibilidad */
-    top: 300px;
-    margin-left: 250px;
+.logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+    margin-top: 20px;
     
 }
 
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }
 
 
 
 .arbol2 {
-    margin-top: -130px;
+    margin-top: 0px;
     margin-left: 50px;
 }
 

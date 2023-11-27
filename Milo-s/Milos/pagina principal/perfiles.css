@@ -3,20 +3,44 @@
     position: relative;
     top: 50px;
     position: relative;
-    top: 10px; 
+    top: -160px; 
 }
 
 .mediocirculomilos{
     margin-left: 74%;
     position: relative;
-    top: 254px;
+    top: 394px;
 }
 
 .perfileshijos{
-    margin-left: 520px;
-    position: relative;
-    top: -320px;
+align-items: center;
+margin-top: -450px;
 }  
+
+.bienvenidos{
+    margin-top: -240px;
+    margin-left: 200px;
+}
+
+.agregar{
+    margin-top: -180px;
+    margin-left: 350px;
+}
+.perfil{
+    margin-left: -230px;
+    margin-top: 20px;
+}
+.sofia{
+    margin-left: 290px;
+    margin-top: -270px;
+}
+.juan{
+    margin-left: 200px;
+    margin-top: 50px;
+    padding-right: 40px;
+    padding-left: 50px;
+}
+
 
 .agregarperfil{
     margin-left: 100px;
@@ -37,3 +61,7 @@
 .agregarperfil2{
     margin-left: -100px;
 }
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }

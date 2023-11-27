@@ -34,7 +34,39 @@
     margin-left: 530px;
     margin-top: -110px;
 }
+body{
+    max-height: 90vh;
+    overflow-y: hidden;
+  }
 
+  .logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+}
+  .logomilos{
+    height: 30px;
+    margin-left: 30px;
+    margin-top: -22px;
+    }
+
+.tateti{
+    margin-left: 280px;
+    margin-top: 1px;
+}
+
+.Rectangulorosa{
+    width: 1250px;
+}
 .triste{
     margin-left: 640px;
     margin-top: -110px;
@@ -48,5 +80,5 @@
 .mediocirculoverde{
     width: 290px;
     margin-left: 426px;
-    margin-top: -45px;
+    margin-top: 5px;
 }

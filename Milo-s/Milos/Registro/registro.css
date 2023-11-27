@@ -1,3 +1,7 @@
+body{
+  max-height: 90vh;
+  overflow-y: hidden;
+}
 .container {
   display: flex;
   justify-content: center;
@@ -18,7 +22,22 @@
 .mediocirculomilos {
   position: absolute;
   margin-left: 760px;
-  margin-top: 234px;
+  margin-top: 348px;
+}
+.logomilos{
+  height: 30px;
+  margin-left: 30px;
+  margin-top: -22px;
+  }
+
+.tateti{
+  margin-left: 280px;
+  margin-top: 1px;
+}
+
+.Rectangulorosa{
+  width: 1250px;
+  margin-top: -320px;
 }
 
 .logomilos{
@@ -34,7 +53,7 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   width: 300px;
   border: rgba(217, 217, 217, 1);
-  margin-top: 20px; /* Baja el formulario de registro */
+  margin-top: 30px; /* Baja el formulario de registro */
   text-align: center;
   width: 30%;
   height: 350px;
