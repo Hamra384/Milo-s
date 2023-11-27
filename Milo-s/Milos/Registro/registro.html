@@ -26,6 +26,7 @@
         <img src="C:\Users\47699199\Desktop\Milo-s\Milo-s\Milos\Imagenes\Group 2.png" alt="Imagen de inicio de sesión" class="mediocirculomilos">
         <div class="registration-form">
           <h2>Registrarse</h2>
+    
           <form>
             <div class="form-group">
               
@@ -57,28 +58,19 @@
         <script>
   
   
-  function validarGenero() {
-    const generoInput = document.getElementById('email');
-    const errorGenero = document.getElementById('errorGenero');
-    const genero = generoInput.value.toLowerCase();
+  document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe automáticamente
+            enviarSolicitudRegistro();
+        });
 
-    if (genero !== 'masculino' && genero !== 'femenino') {
-      errorGenero.textContent = 'El género debe ser "Masculino" o "Femenino"';
-      generoInput.value = ''; // Limpia el campo
-    } else {
-      errorGenero.textContent = ''; // Limpia el mensaje de error
-    }
-  }
-  document.getElementById('registroForm').addEventListener('submit', function(event) {
-                event.preventDefault(); // Evita que el formulario se envíe automáticamente
-                enviarSolicitudRegistro();
-            });
+        function enviarSolicitudRegistro() {
+            // ... (tu código para enviar la solicitud)
 
-            function enviarSolicitudRegistro() {
-                const nombreUsuario = document.getElementById('nombre').value;
-                const email = document.getElementById('email').value;
-                const contraseña = document.getElementById('contraseña').value;
+            // Después de enviar la solicitud, redirige a otra página
+            window.location.href = "ruta_a_tu_otra_pagina.html";
+        }
 
+ HEAD
                 fetch('/RegistrarUsuario', {
                     method: 'POST',
                     headers: {
@@ -99,7 +91,7 @@
                 .catch(error => {
                     console.error('Error al enviar la solicitud:', error);
                 });
-            }
+            
 
 
 
@@ -110,7 +102,4 @@
             });
 
             
-        </script>
-    </div>
-</body>
-</html>
+

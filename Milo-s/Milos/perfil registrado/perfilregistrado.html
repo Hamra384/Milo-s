@@ -65,6 +65,17 @@
         </button>
         
         <script>
+           document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe automáticamente
+            enviarSolicitudRegistro();
+        });
+
+        function enviarSolicitudRegistro() {
+            // ... (tu código para enviar la solicitud)
+
+            // Después de enviar la solicitud, redirige a otra página
+            window.location.href = "ruta_a_tu_otra_pagina.html";
+        }
   
   
   function validarGenero() {
