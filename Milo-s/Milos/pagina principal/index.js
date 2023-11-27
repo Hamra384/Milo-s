@@ -11,6 +11,18 @@ menuIcon.addEventListener('mouseenter', () => {
     submenu.style.display = 'block';
 });
 
+var btnMenu = document.getElementById("btn-menu");
+var grisOverlay = document.getElementById("grisOverlay");
+
+btnMenu.addEventListener("change", function() {
+    if (this.checked) {
+        // Menú activado, muestra la capa gris
+        grisOverlay.style.display = "block";
+    } else {
+        // Menú desactivado, oculta la capa gris
+        grisOverlay.style.display = "none";
+    }
+});
 // Agregamos un evento al salir del icono del menú
 menuIcon.addEventListener('mouseleave', () => {
     isSubMenuVisible = false;

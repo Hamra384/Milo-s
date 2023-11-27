@@ -38,8 +38,8 @@
 	.capa{
 		position: fixed;
 		width: 100%;
-		height: 100vh;
-		background: rgba(255, 255, 255, 0.6);
+		height: 100%;
+		background: rgba(255, 255, 255, 0.979);
 		z-index: -1;
 		top: 0;left: 0;
 	}
@@ -69,6 +69,7 @@
 		color:black;
 		font-size: 35px;
 		cursor: pointer;
+		margin-top: 110px;
 	}
 
 	.container .menu{
@@ -97,7 +98,7 @@
 	/*Menù lateral*/
 	#btn-menu{
 		display: none;
-        margin-top: -40px;
+        margin-top: 30px;
 	}
 	.container-menu{
 		position: absolute;
@@ -128,16 +129,14 @@
         margin-top: 10px;
 	}
 
-    nav a:last-child {
-        margin-top: 240px; /* Esto separará el último enlace del resto y lo colocará al final */
-    }
+
 	.cont-menu nav{
 		transform: translateY(15%);
 	}
 	.cont-menu nav a{
 		display: block;
 		text-decoration: none;
-		padding: 20px;
+		padding: 40px;
 		color: #ffffff;
 		border-left: 5px solid transparent;
 		transition: all 400ms ease;

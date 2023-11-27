@@ -22,8 +22,19 @@ background-color: #ee5353; /* Color de fondo del botón */
       left: 485px;
     }
 
+    body {
+        margin: 0; /* Asegúrate de que no haya márgenes en el cuerpo del documento */
+    }
+
+    .flechaatras {
+        position: absolute;
+        top: 25px; /* Centra verticalmente en relación con el cuerpo del documento */
+        left: 10px; /* O ajusta la posición a tu preferencia */
+        transform: translateY(-50%); /* Ajusta para centrar exactamente */
+    }
+
 .arbol {
-    margin-top: -285px;
+    margin-top: -265px;
     margin-left: 1100px;
 }
 
@@ -52,7 +63,7 @@ body{
 
 
 .arbol2 {
-    margin-top: 0px;
+    margin-top: 5px;
     margin-left: 50px;
 }
 
