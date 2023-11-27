@@ -3,7 +3,7 @@ POST http://localhost:8080/RegistrarUsuario
 Content-Type: application/json
 
 {
- "Nombre_Usuario": "jorge",
+ "Nombre_Usuario": "jorga",
  "Contraseña": "12345h",
     "Email": "jorge@gmail.com"
 } 

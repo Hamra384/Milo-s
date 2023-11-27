@@ -26,12 +26,10 @@ async function QueryIn(string, values) {
         throw error;
     }
 }
-
 async function RegistrarUsuario(nombre, contraseña, email) {
     const saltRounds = 10;
 
     try {
-
         // Generar un hash de la contraseña
         const hash = await bcrypt.hash(contraseña, saltRounds);
 
@@ -40,15 +38,22 @@ async function RegistrarUsuario(nombre, contraseña, email) {
         const values = [nombre, hash, email];
 
         // Ejecutar la consulta
-        const respuesta = await QueryIn(consulta, values);
+        const results = await QueryIn(consulta, values);
 
-        console.log("Usuario insertado correctamente:", respuesta);
-        return respuesta;
+        // Verificar si se insertaron filas (results.affectedRows)
+        if (results && results.affectedRows > 0) {
+            console.log("Usuario insertado correctamente:", results);
+            return results;
+        } else {
+            console.log("No se insertaron filas");
+            return { error: "No se insertaron filas" };
+        }
     } catch (error) {
         console.error("Error al insertar usuario:", error);
         throw error;
     }
 }
+
 
 async function RegistrarHijo(nombreHijo, generoHijo, edadHijo, idUsuario) {
     const consulta = "INSERT INTO datos_hijos (Nombre_Hijo, Genero_Hijo, Edad_Hijo) VALUES (?, ?, ?)";
